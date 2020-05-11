@@ -79,3 +79,9 @@ funny: "ha ha"
 #menu: key(alt)
 
 
+#my code
+cd talon user: "cd ~/.talon/user/" 
+cd talon math: "cd ~/.talon/user/mathfly/" 
+edit talon terminal: "vim ~/.talon/user/knausj_talon-master/apps/linux/terminal.talon"
+run terminal: key(ctrl-alt-t)
+list: "ls "

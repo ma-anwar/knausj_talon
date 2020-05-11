@@ -10,4 +10,6 @@ ctx.settings['dictate.word_map'] = {
     "i'm": "I'm",
     "i've": "I've",
     "i'd": "I'd",
+    "scaler": "scalar",
+    "edition": "addition",
 }

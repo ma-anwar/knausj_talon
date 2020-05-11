@@ -36,4 +36,47 @@ action(edit.copy):
 action(edit.word_left):
   key(ctrl-w-left)
 action(edit.word_right):
-  key(ctrl-w-right)
+  key(ctrl-w-right) 
+# my code
+up one:
+    "cd .."
+    key(enter)
+move: insert("mv ")
+find: insert("find ")
+declare terminal <phrase>: 
+ insert("termtitle ")
+ insert(phrase)
+
+quit:
+ insert(":q!" )
+ key(enter) 
+done:
+ insert(":w" )
+ key(enter) 
+save and quit:
+ insert(":wq" )
+ key(enter) 
+#tmux commands
+create new window:
+ key(ctrl-b)
+ key(c)
+switch to window <number>:
+  key(ctrl-b)
+  key(number)
+split horizontal:
+  key(ctrl-b)
+  key(%)
+split vertical:
+  key(ctrl-b)
+  key(")
+next pane:
+  key(ctrl-b)
+  key(o)
+toggle pane:
+  key(ctrl-b)
+  key(;)
+close pane:
+  key(ctrl-b)
+  key(x)
+command cat: "cat "
+less: "less "
