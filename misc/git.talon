@@ -1,8 +1,9 @@
-app: /terminal/
+
 app: cmd.exe
 app: iTerm2
 app: Terminal
 app: Windows Command Processor
+app: ConEmu64.exe
 -
 git add patch: insert("git add . -p\n")
 git add: insert("git add ")

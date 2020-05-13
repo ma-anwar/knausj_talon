@@ -85,3 +85,7 @@ cd talon math: "cd ~/.talonNew/user/mathfly/"
 edit talon terminal: "vim ~/.talon/user/knausj_talon-master/apps/linux/terminal.talon"
 run terminal: key(ctrl-alt-t)
 list: "ls "
+stupid test:
+    print(app.name())
+    print(app.executable())
+    print(app.bundle())
