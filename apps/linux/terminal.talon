@@ -62,7 +62,7 @@ create new window:
  key(c)
 switch to window <number>:
   key(ctrl-b)
-  key(number)
+  key(“{number}”)
 split horizontal:
   key(ctrl-b)
   key(%)
