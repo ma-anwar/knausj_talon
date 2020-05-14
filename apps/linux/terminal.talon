@@ -79,4 +79,6 @@ close pane:
   key(ctrl-b)
   key(x)
 command cat: "cat "
-less: "less "
+  less: "less "
+remove: "rm "
+remove recursively: "rm -rf "
