@@ -23,3 +23,4 @@ action(user.file_manager_open_parent):
     insert("cd ..")
     key(enter)
     user.file_manager_refresh_title()
+
