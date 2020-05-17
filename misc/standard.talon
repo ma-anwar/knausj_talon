@@ -80,8 +80,8 @@ funny: "ha ha"
 
 
 #my code
-cd talon user: "cd ~/.talonNew/user/" 
-cd talon math: "cd ~/.talonNew/user/mathfly/" 
+cd talon user: "cd ~/.talon/user/" 
+cd talon math: "cd ~/.talon/user/mathfly/" 
 edit talon terminal: "vim ~/.talon/user/knausj_talon-master/apps/linux/terminal.talon"
 run terminal: key(ctrl-alt-t)
 list: "ls "
@@ -89,3 +89,4 @@ stupid test:
     print(app.name())
     print(app.executable())
     print(app.bundle())
+<number>:insert(number)

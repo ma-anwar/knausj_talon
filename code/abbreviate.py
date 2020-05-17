@@ -12,6 +12,8 @@ def abbreviation(m) -> str:
 ctx = Context()
 # List taken from an aenea grammar
 ctx.lists['user.abbreviation'] = {
+        "module": "mod",
+        "context": "ctx",
     "administrator": "admin",
     "administrators": "admins",
     "application": "app",

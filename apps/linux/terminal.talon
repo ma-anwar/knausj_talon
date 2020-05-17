@@ -47,7 +47,7 @@ declare terminal <phrase>:
  insert("termtitle ")
  insert(phrase)
 
-quit:
+exit:
  insert(":q!" )
  key(enter) 
 done:
@@ -82,3 +82,4 @@ command cat: "cat "
   less: "less "
 remove: "rm "
 remove recursively: "rm -rf "
+touch: "touch "
