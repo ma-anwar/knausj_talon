@@ -23,5 +23,11 @@ talon mode: speech.enable()
     mode.enable("dictation")
 ^command mode$:
     mode.disable("sleep")
+	mode.disable("dictation")
+	#mode.disable("bug")
+	mode.enable("command")
+^bug mode$:
+    mode.disable("sleep")
     mode.disable("dictation")
-    mode.enable("command")
+	mode.enable("command")
+	mode.enable("bug")

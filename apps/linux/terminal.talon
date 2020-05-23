@@ -82,4 +82,12 @@ command cat: "cat "
   less: "less "
 remove: "rm "
 remove recursively: "rm -rf "
-touch: "touch "
+run touch: "touch "
+admin: "sudo "
+run docker: "docker "
+list: 
+  insert("ls")
+  key(enter)
+list all:
+  insert("ls -a")
+  key(enter)
