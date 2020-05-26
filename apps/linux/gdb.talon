@@ -39,3 +39,6 @@ set logging on:
     key(enter)
 set logging file:
     insert("set logging file ")
+info registers:
+    insert("info registers")
+    key(enter)

@@ -10,6 +10,7 @@ extension_lang_map = {
 "cpp"  : "cplusplus",
 "h"    : "cplusplus",
 "talon": "talon",
+"c"    : "c",
 }
 
 # The [^\\\/] is specifically to avoid matching something like a .talon folder

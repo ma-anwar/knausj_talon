@@ -3,7 +3,7 @@ settings():
 slap:
 	edit.line_end()
 	key(enter)
-cd: "cd "
+go: "cd "
 grep: "grep "
 elle less: "ls "
 run L S: "ls\n"

@@ -12,4 +12,8 @@ ctx.settings['dictate.word_map'] = {
     "i'd": "I'd",
     "scaler": "scalar",
     "edition": "addition",
+    "sign":"sine",
+    "cosign": "cosine",
+    "cord":"chord",
+    "at it":"edit",
 }
