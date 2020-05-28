@@ -1,3 +1,4 @@
+# Python code largely stolen from https://github.com/fidgetingbits/knausj_talon
 from talon import Context, Module, actions
 
 mod = Module()
@@ -113,4 +114,4 @@ def variable(m) -> str:
 
 @ctx.capture(rule="[<self.c_signed>] <self.c_types> [<self.c_pointers>]")
 def function(m) -> str:
-    return "(" + " ".join(list(m)) + ")"
+    return " ".join(list(m))

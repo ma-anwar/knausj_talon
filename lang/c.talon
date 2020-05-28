@@ -10,9 +10,9 @@ direct if define: "#ifdef "
 direct if: "#if "
 direct error: "#error "
 direct else if: "#elif "
-direct and: "#endif "
+direct end: "#endif "
 direct pragma: "#pragma "
-state comment: "// "
+state comment: "//"
 block comment:
     insert("/*")
     key(enter)
@@ -21,11 +21,16 @@ block comment:
     edit.up()
 #control flow
 #best used with a push like command
-#the below example works with vim syntastic plugin and vscode
+#the below example works well with vscode
 push brackets:
     edit.line_end()
     insert("{")
     key(enter)
+    #insert("{}")
+    #edit.left()
+    #key(enter)
+    #key(enter)
+    #edit.up()
 push semi:
     edit.line_end()
     insert(";")
@@ -67,15 +72,21 @@ state while:
     edit.left()
 state do:
     insert("do ")
-#Declare variables or structs etc.
+
+# Declare variables or structs etc.
+# Ex. * int myList 
 <user.variable> <phrase>:
     insert("{variable} ")
     insert(user.formatted_text(phrase, "PRIVATE_CAMEL_CASE,NO_SPACES"))
     insert(" ")
+
+# Ex. int * testFunction
 <user.function> <phrase>:
     insert("{function} ")
     insert(user.formatted_text(phrase, "PRIVATE_CAMEL_CASE,NO_SPACES"))
     insert(" ")
+
+# Ex. (int *)
 cast to <user.cast>: "{cast} "
 <user.c_types>: "{c_types} "
 <user.c_pointers>: "{c_pointers}"
