@@ -16,4 +16,5 @@ ctx.settings['dictate.word_map'] = {
     "cosign": "cosine",
     "cord":"chord",
     "at it":"edit",
+    "no space": "null space",
 }

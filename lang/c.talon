@@ -24,13 +24,13 @@ block comment:
 #the below example works well with vscode
 push brackets:
     edit.line_end()
-    insert("{")
+    #insert("{")
+    #key(enter)
+    insert("{}")
+    edit.left()
     key(enter)
-    #insert("{}")
-    #edit.left()
-    #key(enter)
-    #key(enter)
-    #edit.up()
+    key(enter)
+    edit.up()
 push semi:
     edit.line_end()
     insert(";")
@@ -70,30 +70,38 @@ state while:
     insert("while () ")
     edit.left()
     edit.left()
-state do:
-    insert("do ")
+state do: "do "
+state return: "return "
 
 # Declare variables or structs etc.
 # Ex. * int myList 
 <user.variable> <phrase>:
     insert("{variable} ")
     insert(user.formatted_text(phrase, "PRIVATE_CAMEL_CASE,NO_SPACES"))
-    insert(" ")
+
+<user.variable> <user.letter>:
+    insert("{variable} {letter} ")
 
 # Ex. int * testFunction
-<user.function> <phrase>:
+fun <user.function> <phrase>:
     insert("{function} ")
     insert(user.formatted_text(phrase, "PRIVATE_CAMEL_CASE,NO_SPACES"))
-    insert(" ")
+    insert("()")
+    edit.left()
+
+<user.function>:
+    insert("{function} ")
 
 # Ex. (int *)
-cast to <user.cast>: "{cast} "
-<user.c_types>: "{c_types} "
+cast to <user.cast>: "{cast}"
+<user.c_types>: "{c_types}"
 <user.c_pointers>: "{c_pointers}"
-<user.c_signed>: "{c_signed} "
+<user.c_signed>: "{c_signed}"
 #import standard libraries
 include <user.library>:
     insert("#include <{library}>")
     key(enter)
-
-    
+void: "void"
+int main:
+    insert("int main()")
+    edit.left()

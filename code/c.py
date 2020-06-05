@@ -27,6 +27,7 @@ ctx.lists["self.c_types"] = {
     "struck": "struct",
     "num": "enum",
     "union": "union",
+    "float": "float",
 }
 
 ctx.lists["self.c_libraries"] = {

@@ -1,5 +1,5 @@
 settings():
-    speech.debug = 1
+    speech.debug = 0
 slap:
 	edit.line_end()
 	key(enter)

@@ -91,3 +91,4 @@ list:
 list all:
   insert("ls -a")
   key(enter)
+clear: "clear\n"
