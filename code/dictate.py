@@ -17,4 +17,5 @@ ctx.settings['dictate.word_map'] = {
     "cord":"chord",
     "at it":"edit",
     "no space": "null space",
+    "cotton": "kotlin",
 }
