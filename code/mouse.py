@@ -1,9 +1,7 @@
-from talon import cron, ctrl, ui, Module, Context, actions, noise, settings, imgui
+from talon import cron, ctrl, ui, Module, Context, actions, noise, settings, imgui, app
 from talon.engine import engine
 from talon_plugins import speech, eye_mouse, eye_zoom_mouse
-import platform
 import subprocess
-import ctypes
 import os
 import pathlib
 
@@ -44,6 +42,7 @@ mod.list('mouse_button', desc='List of mouse button words to mouse_click index p
 mod.setting('mouse_enable_pop_click', type=int, default=0,desc="Enable pop to click when control mouse is enabled.")
 mod.setting('mouse_enable_pop_stops_scroll', type=int,default=0,desc="When enabled, pop stops continuous scroll modes (wheel upper/downer/gaze)")
 mod.setting('mouse_wake_hides_cursor', type=int, default=0,desc="When enabled, mouse wake will hide the cursor. mouse_wake enables zoom mouse.")
+mod.setting('mouse_hide_mouse_gui', type=int, default=0,desc="When enabled, the 'Scroll Mouse' GUI will not be shown.")
 
 ctx = Context()
 ctx.lists['self.mouse_button'] = {
@@ -57,7 +56,7 @@ ctx.lists['self.mouse_button'] = {
 
 continuous_scoll_mode = ""
 
-@imgui.open(x=700, y=0)
+@imgui.open(x=700, y=0,software=False)
 def gui_wheel(gui: imgui.GUI):
     gui.text("Scroll mode: {}".format(continuous_scoll_mode))
     gui.line()
@@ -149,8 +148,8 @@ class Actions:
         
         if scroll_job is None:
             start_scroll() 
-
-        gui_wheel.show()
+        if settings.get("user.mouse_hide_mouse_gui") == 0:
+            gui_wheel.show()
 
     def mouse_scroll_stop():
         """Stops scrolling"""
@@ -161,12 +160,14 @@ class Actions:
         global continuous_scoll_mode
         continuous_scoll_mode = "gaze scroll"
         start_cursor_scrolling()
-        gui_wheel.show()
+        if settings.get("user.mouse_hide_mouse_gui") == 0:
+            gui_wheel.show()
         
 def show_cursor_helper(show):
     """Show/hide the cursor"""
-    if "Windows-10" in platform.platform(terse=True):
+    if app.platform == "windows":
         import winreg, win32con
+        import ctypes
 
         try:
             Registrykey = winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Control Panel\Cursors", 0, winreg.KEY_WRITE)
@@ -259,4 +260,3 @@ def start_cursor_scrolling():
 @ctx.capture(rule='{self.mouse_button}')
 def mouse_index(m) -> int:
     return int(m.mouse_button)
-    

@@ -1,5 +1,10 @@
 
 os: linux
+# XXX - this matches .gdb files atm
+#win.title: /gdb/
+tag: terminal
+mode: user.gdb
+tag(): gdb
 app: Gnome-terminal
 
 -
@@ -34,22 +39,35 @@ set logging file:
     insert("set logging file ")
 
 #fidgets stuff
+
 # information
 list [source]: "list\n"
 info source: "info source\n"
 
 print: "p "
-print [variable] <phrase>: "p {phrase}"
+print [variable] <user.text>: "p {text}"
 print hex: "p/x "
-print hex [variable] <phrase>: "p/x {phrase}"
+print hex [variable] <user.text>: "p/x {text}"
 print string: "p/s "
 
 # hexdumping
-# XXX - switch the sizes to a list in python
+# XXX - switch the sizes to a list in python?
+# XXX - should cache the last used size
 hex dump <number> bytes: "x/{number}bx "
 hex dump <number> (half|short) words: "x/{number}hx "
 hex dump <number> (d|long) words: "x/{number}dx "
 hex dump <number> quad words: "x/{number}gx "
+# this is some arbitrary default for convenience
+hex dump: "x/100gx "
+hex dump highlighted:
+    insert("x/100gx ")
+    edit.copy()
+    edit.paste()
+    key(enter)
+hex dump clipboard:
+    insert("x/100gx ")
+    edit.paste()
+    key(enter)
 
 ### Breakpoints ###
 
@@ -86,8 +104,9 @@ finish [function]: "finish\n"
 source: "source \t\t"
 
 # stepping
-step line: "step\n"
+step [instruction|line]: "stepi\n"
 (step over|next) line: "next\n"
+(step over|next) instruction: "nexti\n"
 
 # displays
 # XXX - move thee invoke command into a python script
