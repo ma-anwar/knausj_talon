@@ -38,6 +38,7 @@ class code_actions:
         if not forced_language:
             file_extension = actions.win.file_ext()
             file_name = actions.win.filename()
+            print(file_name)
 
             if file_extension != "":
                 result = file_extension
