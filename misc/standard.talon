@@ -92,3 +92,5 @@ stupid test:
     print(app.executable())
     print(app.bundle())
 <number>:insert(number)
+google that:
+	user.system_command("google-chrome google.com/search?q=\"$(xclip -o)\"")

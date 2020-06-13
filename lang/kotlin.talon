@@ -1,4 +1,4 @@
-code.language: kt
+code.language: kotlin
 -
 
 state package: "package "

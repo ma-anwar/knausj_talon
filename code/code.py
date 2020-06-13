@@ -25,7 +25,9 @@ extension_lang_map = {
     "gdb": "gdb",
     "md": "markdown",
     "sh": "bash",
-    "go": "go"
+    "go": "go",
+    "kt": "kotlin",
+    
 }
 
 #flag indicates whether or not the title tracking is enabled
@@ -38,7 +40,7 @@ class code_actions:
         if not forced_language:
             file_extension = actions.win.file_ext()
             file_name = actions.win.filename()
-            print(file_name)
+            #print(file_name)
 
             if file_extension != "":
                 result = file_extension
