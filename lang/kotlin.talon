@@ -2,7 +2,7 @@ code.language: kotlin
 -
 
 state package: "package "
-state import: "import "
+user.code_import: "import "
 as: "as "
 safe as: "as? "
 is: "is "
@@ -11,20 +11,20 @@ is not: "!is "
 in: "in "
 not in: "!in "
 state break: "break"
-state class: "class "
+user.code_type_class: "class "
 state continue: "continue"
-state if: 
+user.code_state_if:
     insert("if () ")
     edit.left()
     edit.left()
-state else:
+user.code_state_else:
     insert("else ")
-state while:
+user.code_state_while:
     insert("while () ")
     edit.left()
     edit.left()
 state do: "do "
-state for:
+user.code_state_for:
     insert("for () ")
     edit.left()
     edit.left()
@@ -41,3 +41,7 @@ push brackets:
     key(enter)
     key(enter)
     edit.up()
+push:
+    edit.line_end()
+ball: "val "
+bar: "var t"

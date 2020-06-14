@@ -17,6 +17,7 @@ key = actions.key
 
 extension_lang_map = {
     "c"    : "c",
+    "md": "markdown",
     "py": "python",
     "cs": "csharp",
     "cpp": "cplusplus",

@@ -42,6 +42,7 @@ port_mapping = {
     "jetbrains-pycharm-ce": 8658,
     "jetbrains-rider": 8660,
     "jetbrains-rubymine": 8661,
+    "jetbrains-studio": 8652,
     "jetbrains-webstorm": 8663,
     "google-android-studio": 8652,
 
@@ -88,6 +89,7 @@ def _get_nonce(port, file_prefix):
     except FileNotFoundError as e:
         try:
             home = str(Path.home())
+            print(home)
             with open(os.path.join(home, file_name), "r") as fh:
                 return fh.read()
         except FileNotFoundError as eb:
@@ -102,7 +104,9 @@ def send_idea_command(cmd):
     print("Sending {}".format(cmd))
     active_app = ui.active_app()
     bundle = active_app.bundle or active_app.name
+    print(bundle)
     port = port_mapping.get(bundle, None)
+    print(port)
     nonce = _get_nonce(port, '.vcidea_') or _get_nonce(port, 'vcidea_')
     print(f"sending {bundle} {port} {nonce}")
     if port and nonce:

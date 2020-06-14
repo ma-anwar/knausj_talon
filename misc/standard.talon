@@ -93,4 +93,4 @@ stupid test:
     print(app.bundle())
 <number>:insert(number)
 google that:
-	user.system_command("google-chrome google.com/search?q=\"$(xclip -o)\"")
+	user.system_command("midori https://www.google.com/search?q=\"$(xclip -o)\"")
