@@ -1,5 +1,5 @@
-settings():
-    speech.debug = 0
+#settings():
+ #   speech.debug = 0
 slap:
 	edit.line_end()
 	key(enter)
@@ -92,5 +92,5 @@ stupid test:
     print(app.executable())
     print(app.bundle())
 <number>:insert(number)
-google that:
-	user.system_command("midori https://www.google.com/search?q=\"$(xclip -o)\"")
+search that:
+	user.system_command("midori https://www.google.com/search?q=\"$(xclip -o)\"&")

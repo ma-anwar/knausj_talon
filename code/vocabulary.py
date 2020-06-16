@@ -11,6 +11,9 @@ simple_vocabulary = [
     "kotlin",
     "mux",
     "vim",
+    "nav",
+    "edit",
+    "debug",
 ]
 
 mapping_vocabulary = {
@@ -38,6 +41,7 @@ def word(m) -> str:
 @mod.capture(rule='(<user.word> | <phrase>)+')
 def text(m) -> str:
     #todo: use actions.dicate.parse_words for better dragon support once supported
+    print('we reached here')
     words = str(m).split(' ')
     i = 0
     while i < len(words):
@@ -45,6 +49,17 @@ def text(m) -> str:
         i += 1
 
     return ' '.join(words)
+#capture to insert text with spaces
+@mod.capture(rule='(<user.word> | <phrase>)+')
+def spaceText(m) -> str:
+    words = str(m).split(' ')
+    
+    i = 0
+    while i < len(words):
+        words[i] = remove_dragon_junk(words[i])
+        i += 1
+
+    return (' '.join(words) + ' ')
 
 mod.list('vocabulary', desc='user vocabulary')
 

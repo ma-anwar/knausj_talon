@@ -114,6 +114,7 @@ def send_idea_command(cmd):
             "http://localhost:{}/{}/{}".format(port, nonce, cmd), timeout=(0.05, 3.05)
         )
         response.raise_for_status()
+        print(response.text)
         return response.text
 
 

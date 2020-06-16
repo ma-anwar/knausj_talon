@@ -1,5 +1,6 @@
 os: linux
 app: Gnome-terminal
+app: Mate-terminal
 -
 tag(): terminal
 action(edit.page_down):

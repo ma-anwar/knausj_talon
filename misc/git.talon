@@ -5,6 +5,7 @@ app: Terminal
 app: Windows Command Processor
 app: ConEmu64.exe
 app: Gnome-terminal
+app: Mate-terminal
 tag: terminal
 -
 

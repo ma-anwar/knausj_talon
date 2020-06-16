@@ -67,7 +67,7 @@ action(user.ide_done):
   key(tab)
 
 action(user.ide_show_explorer):
-  key(ctrl-shift-e)
+  key(ctrl-shift-E)
 
 action(user.ide_show_search):
   key(ctrl-shift-f)

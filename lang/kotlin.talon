@@ -1,6 +1,13 @@
 code.language: kotlin
 -
-
+state comment: "// "
+state block comment: 
+    insert('/**/')
+    edit.left()
+    repeat(1)
+    key(enter)
+    key(enter)
+    edit.up()
 state package: "package "
 user.code_import: "import "
 as: "as "
@@ -10,6 +17,7 @@ is not: "!is "
 
 in: "in "
 not in: "!in "
+state super: "super"
 state break: "break"
 user.code_type_class: "class "
 state continue: "continue"
