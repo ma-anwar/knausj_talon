@@ -293,3 +293,7 @@ action(user.ide_resize_window_down): user.idea("action ResizeToolWindowDown")
 <user.movement_verbs> line <number> end: user.idea_movement(movement_verbs, "goto {number} 9999")
 <user.movement_verbs> next <phrase> [over]: user.idea_movement(movement_verbs, "find next {phrase}, action EditorRight")
 <user.movement_verbs> last <phrase> [over]: user.idea_movement(movement_verbs, "find prev {phrase}, action EditorRight")
+
+#custom commands
+auto select:
+    key(alt-enter)

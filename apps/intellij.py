@@ -2,8 +2,7 @@ from talon import Context, actions, ui, Module, app
 
 ctx = Context()
 ctx.matches = r'''
-app: Gnome-terminal
-app: Mate-terminal
+app: jetbrains-idea
 '''
 @ctx.action_class('win')
 class win_actions:
@@ -14,4 +13,6 @@ class win_actions:
         return title
 
     def file_ext():
-        return actions.win.filename().split(".")[-1]
+        #print((actions.win.filename()).split(".")[1].split()[0])
+        return ((actions.win.filename()).split(".")[1].split()[0]).strip()
+        

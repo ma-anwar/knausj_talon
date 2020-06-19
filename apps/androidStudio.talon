@@ -11,8 +11,7 @@ project run:
     key(shift-f10)
 project debug:
     key(shift-f9) 
-auto select:
-    key(alt-enter)
+
 expand:
     key(ctrl-w)
 nested search:

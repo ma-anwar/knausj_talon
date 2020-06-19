@@ -14,6 +14,8 @@ simple_vocabulary = [
     "nav",
     "edit",
     "debug",
+    "org",
+    "intellij",
 ]
 
 mapping_vocabulary = {
@@ -23,6 +25,9 @@ mapping_vocabulary = {
     "i'll": "I'll",
     "i'd": "I'd",
     "cortland": "kotlin",
+    'clothes': "close",
+    "open2":"ubuntu",
+    
 
 }
 
@@ -41,7 +46,7 @@ def word(m) -> str:
 @mod.capture(rule='(<user.word> | <phrase>)+')
 def text(m) -> str:
     #todo: use actions.dicate.parse_words for better dragon support once supported
-    print('we reached here')
+    #print('we reached here')
     words = str(m).split(' ')
     i = 0
     while i < len(words):

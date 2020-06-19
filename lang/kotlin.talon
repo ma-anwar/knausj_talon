@@ -1,5 +1,6 @@
 code.language: kotlin
 -
+tag(): user.code_generic
 state comment: "// "
 state block comment: 
     insert('/**/')
@@ -9,7 +10,7 @@ state block comment:
     key(enter)
     edit.up()
 state package: "package "
-user.code_import: "import "
+action(user.code_import): "import "
 as: "as "
 safe as: "as? "
 is: "is "
@@ -19,20 +20,20 @@ in: "in "
 not in: "!in "
 state super: "super"
 state break: "break"
-user.code_type_class: "class "
+action(user.code_type_class): "class "
 state continue: "continue"
-user.code_state_if:
+action(user.code_state_if):
     insert("if () ")
     edit.left()
     edit.left()
-user.code_state_else:
+action(user.code_state_else):
     insert("else ")
-user.code_state_while:
+action(user.code_state_while):
     insert("while () ")
     edit.left()
     edit.left()
 state do: "do "
-user.code_state_for:
+action(user.code_state_for):
     insert("for () ")
     edit.left()
     edit.left()
@@ -52,4 +53,4 @@ push brackets:
 push:
     edit.line_end()
 ball: "val "
-bar: "var t"
+bar: "var "

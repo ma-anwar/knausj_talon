@@ -44,6 +44,8 @@ find: insert("find ")
 declare terminal <phrase>: 
  insert("termtitle ")
  insert(phrase)
+cat: "cat "
+more: "more "
 
 exit:
  insert(":q!" )
@@ -54,30 +56,7 @@ done:
 save and quit:
  insert(":wq" )
  key(enter) 
-#tmux commands
-create new window:
- key(ctrl-b)
- key(c)
-switch to window <number>:
-  key(ctrl-b)
-  key(“{number}”)
-split horizontal:
-  key(ctrl-b)
-  key(%)
-split vertical:
-  key(ctrl-b)
-  key(")
-next pane:
-  key(ctrl-b)
-  key(o)
-toggle pane:
-  key(ctrl-b)
-  key(;)
-close pane:
-  key(ctrl-b)
-  key(x)
-command cat: "cat "
-  less: "less "
+less: "less "
 remove: "rm "
 remove recursively: "rm -rf "
 run touch: "touch "
@@ -90,7 +69,6 @@ list all:
   insert("ls -a")
   key(enter)
 clear: "clear\n"
-  key(ctrl-w-right)
 action(app.tab_open):
   key(ctrl-shift-t)
 action(app.tab_close):

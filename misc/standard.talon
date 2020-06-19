@@ -8,7 +8,7 @@ grep: "grep "
 elle less: "ls "
 run L S: "ls\n"
 run (S S H | S H): "ssh"
-diff: "diff "
+run diff: "diff "
 dot pie: ".py"
 run vim: "vim "
 run make: "make\n"
@@ -82,9 +82,6 @@ funny: "ha ha"
 
 
 #my code
-cd talon user: "cd ~/.talon/user/" 
-cd talon math: "cd ~/.talon/user/mathfly/" 
-edit talon terminal: "vim ~/.talon/user/knausj_talon-master/apps/linux/terminal.talon"
 run terminal: key(ctrl-alt-t)
 list: "ls "
 stupid test:

@@ -63,3 +63,11 @@ state (no | nil): user.code_null()
     #todo: once .talon action definitions can take parameters, combine these functions
 	user.code_public_static_function()
     user.code_public_function_formatter(user.text)
+
+push <user.symbol>:
+    edit.line_end()
+    insert("{symbol}")
+    key(enter)
+append <user.symbol>:
+    edit.line_end()
+    insert('{symbol}')
