@@ -26,9 +26,7 @@ mapping_vocabulary = {
     "i'd": "I'd",
     "cortland": "kotlin",
     'clothes': "close",
-    "open2":"ubuntu",
-    
-
+    "bunt": "ubuntu",
 }
 
 mapping_vocabulary.update(dict(zip(simple_vocabulary, simple_vocabulary)))
