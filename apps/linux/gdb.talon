@@ -1,13 +1,11 @@
-
 os: linux
 # XXX - this matches .gdb files atm
 #win.title: /gdb/
-tag: terminal
+#tag: terminal
 mode: user.gdb
-tag(): gdb
-app: Gnome-terminal
 
 -
+tag(): gdb
 continue:
     insert("c")
     key(enter)

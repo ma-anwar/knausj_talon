@@ -72,3 +72,4 @@ push <user.symbol>:
 append <user.symbol>:
     edit.line_end()
     insert('{symbol}')
+kick:  ", "

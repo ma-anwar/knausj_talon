@@ -4,6 +4,7 @@ app: Mate-terminal
 -
 tag(): terminal
 tag(): file_manager
+tag(): gdb
 action(edit.page_down):
   key(shift-pagedown)
 action(edit.page_up):

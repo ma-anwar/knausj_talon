@@ -3,7 +3,7 @@
 <user.format_text> over: insert(format_text)
 phrase <user.text>: insert(user.text)
 phrase <user.text> over: insert(user.text)
-(say | speak) <user.spaceText>: insert(user.spaceText)
+(say | speak) <user.spaceText>$: insert(user.spaceText)
 (say | speak) <user.spaceText> over: insert(user.spaceText)
 word <user.word>: insert(user.word)
 list formatters: user.list_formatters()

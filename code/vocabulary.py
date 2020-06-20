@@ -53,7 +53,7 @@ def text(m) -> str:
 
     return ' '.join(words)
 #capture to insert text with spaces
-@mod.capture(rule='(<user.vocabulary> | <phrase>)+')
+@mod.capture(rule='({user.vocabulary} | <phrase>)+')
 def spaceText(m) -> str:
     words = str(m).split(' ')
     
