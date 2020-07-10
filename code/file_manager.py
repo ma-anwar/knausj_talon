@@ -80,8 +80,8 @@ elif app.platform == "linux":
     is_linux = True
     ctx.lists['user.file_manager_directory_remap'] = {}
     ctx.lists['user.file_manager_directory_exclusions'] = {}
-    supported_programs = ['Caja', 'terminal']
-    terminal_programs = ['terminal']
+    supported_programs = ['Caja', 'terminal', 'Mate-terminal']
+    terminal_programs = ['terminal', 'Mate-terminal']
 
 @mod.capture
 def file_manager_directories(m) -> str:

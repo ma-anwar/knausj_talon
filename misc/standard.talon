@@ -1,9 +1,8 @@
-#settings():
- #   speech.debug = 0
+settings():
+    speech.debug = 1
 slap:
 	edit.line_end()
 	key(enter)
-go: "cd "
 grep: "grep "
 elle less: "ls "
 run L S: "ls\n"
@@ -86,6 +85,6 @@ stupid test:
     print(app.name())
     print(app.executable())
     print(app.bundle())
-<number>:insert(number)
 search that:
 	user.system_command("midori https://www.google.com/search?q=\"$(xclip -o)\"&")
+cotton: "kotlin "

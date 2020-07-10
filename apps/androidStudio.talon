@@ -16,4 +16,5 @@ expand:
     key(ctrl-w)
 nested search:
     key(ctrl-shift-n)
-    
+hide project:
+    key(shift-escape)    

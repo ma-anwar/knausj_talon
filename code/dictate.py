@@ -18,4 +18,5 @@ ctx.settings['dictate.word_map'] = {
     "at it":"edit",
     "no space": "null space",
     "cotton": "kotlin",
+    "colon" : ":",
 }

@@ -28,6 +28,7 @@ extension_lang_map = {
     "sh": "bash",
     "go": "go",
     "kt": "kotlin",
+    "hs": "haskell",
     
 }
 

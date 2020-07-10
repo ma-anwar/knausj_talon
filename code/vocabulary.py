@@ -16,6 +16,9 @@ simple_vocabulary = [
     "debug",
     "org",
     "intellij",
+    "firebase",
+    "null",
+    "kernel",
 ]
 
 mapping_vocabulary = {
@@ -27,6 +30,9 @@ mapping_vocabulary = {
     "cortland": "kotlin",
     'clothes': "close",
     "bunt": "ubuntu",
+    "colonel":"kernel",
+    "scaler":"scalar",
+
 }
 
 mapping_vocabulary.update(dict(zip(simple_vocabulary, simple_vocabulary)))
@@ -47,10 +53,9 @@ def text(m) -> str:
     #print('we reached here')
     words = str(m).split(' ')
     i = 0
-    while i < len(words):
-        words[i] = remove_dragon_junk(words[i])
-        i += 1
-
+    #while i < len(words):
+    #    words[i] = remove_dragon_junk(words[i])
+    #    i += 1
     return ' '.join(words)
 #capture to insert text with spaces
 @mod.capture(rule='({user.vocabulary} | <phrase>)+')

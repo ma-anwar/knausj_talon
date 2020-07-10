@@ -12,13 +12,13 @@ state block comment:
     edit.up()
 state package: "package "
 action(user.code_import): "import "
-as: "as "
-safe as: "as? "
-is: "is "
-is not: "!is "
+state as: "as "
+state safe as: "as? "
+state is: "is "
+state is not: "!is "
 
-in: "in "
-not in: "!in "
+state in: "in "
+state not in: "!in "
 state super: "super"
 state break: "break"
 action(user.code_type_class): "class "
@@ -59,7 +59,7 @@ push:
     edit.line_end()
 ball: "val "
 bar: "var "
-
+state late: "lateinit "
 action(user.code_operator_subscript): 
 	insert("[]")
 	key(left)

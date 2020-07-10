@@ -31,9 +31,9 @@ def arrow(m) -> str:
 def arrows(m) -> str:
     "One or more arrows separate by a space"
 
-@mod.capture
-def number(m) -> str:
-    "One number key"
+#@mod.capture
+#def number(m) -> str:
+#    "One number key"
  
 @mod.capture
 def letter(m) -> str:
@@ -144,9 +144,9 @@ def arrow(m) -> str:
 def arrows(m) -> str: 
     return str(m)
 
-@ctx.capture(rule='{self.number}')
-def number(m):
-    return m.number
+#@ctx.capture(rule='{self.number}')
+#def number(m):
+#    return m.number
 
 @ctx.capture(rule='{self.letter}')
 def letter(m):
