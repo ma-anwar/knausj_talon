@@ -19,6 +19,17 @@ simple_vocabulary = [
     "firebase",
     "null",
     "kernel",
+    "eigenvalue",
+    "eigenvector",
+    "eigenspace",
+    "eigenvalues",
+    'eigenvectors',
+    'eigenspaces',
+    "scalar",
+    "diagonalizable",
+    "algebraic",
+    "Caley-Hamilton",
+
 ]
 
 mapping_vocabulary = {
@@ -32,6 +43,7 @@ mapping_vocabulary = {
     "bunt": "ubuntu",
     "colonel":"kernel",
     "scaler":"scalar",
+    "Kelly hamilton": "Caley-Hamilton",
 
 }
 

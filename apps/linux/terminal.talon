@@ -38,16 +38,13 @@ action(edit.word_left):
 action(edit.word_right):
   key(ctrl-w-right) 
 # my code
-up one:
-    "cd .."
-    key(enter)
-move: insert("mv ")
-find: insert("find ")
+state move: insert("mv ")
+state find: insert("find ")
 declare terminal <phrase>: 
  insert("termtitle ")
  insert(phrase)
-cat: "cat "
-more: "more "
+state cat: "cat "
+state more: "more "
 
 exit:
  insert(":q!" )
@@ -59,11 +56,11 @@ save and quit:
  insert(":wq" )
  key(enter) 
 less: "less "
-remove: "rm "
-remove recursively: "rm -rf "
-run touch: "touch "
-admin: "sudo "
-run docker: "docker "
+state remove: "rm "
+state remove recursively: "rm -rf "
+state touch: "touch "
+state admin: "sudo "
+state docker: "docker "
 list: 
   insert("ls")
   key(enter)

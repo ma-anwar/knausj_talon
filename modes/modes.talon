@@ -39,6 +39,7 @@ disable debug mode:
 ^force see sharp$: user.code_set_language_mode("csharp")
 ^force see plus plus$: user.code_set_language_mode("cplusplus")
 ^force python$: user.code_set_language_mode("python")
+^force haskell$: user.code_set_language_mode("haskell")
 ^force go (lang|language)$: user.code_set_language_mode("go")
 ^force talon language$: user.code_set_language_mode("talon")
 ^force markdown$: user.code_set_language_mode("markdown")
