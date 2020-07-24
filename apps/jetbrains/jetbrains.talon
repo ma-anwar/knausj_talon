@@ -256,22 +256,6 @@ action(user.split_next): user.idea("action NextSplitter")
 action(user.split_last): user.idea("action LastSplitter")
 
 # Movement
-<<<<<<< HEAD:apps/jetbrains.talon
-<user.movement_verbs> this: user.idea_movement(movement_verbs, "")
-<user.movement_verbs> next (error | air): user.idea_movement(movement_verbs, "action GotoNextError")
-<user.movement_verbs> last (error | air): user.idea_movement(movement_verbs, "action GotoPreviousError")
-<user.movement_verbs> camel left: user.idea_movement(movement_verbs, "action EditorPreviousWordInDifferentHumpsMode")
-<user.movement_verbs> camel right: user.idea_movement(movement_verbs, "action EditorNextWordInDifferentHumpsMode")
-<user.movement_verbs> line <number>: user.idea_movement(movement_verbs, "goto {number} 0")
-<user.movement_verbs> line <number> end: user.idea_movement(movement_verbs, "goto {number} 9999")
-<user.movement_verbs> next <phrase> [over]: user.idea_movement(movement_verbs, "find next {phrase}, action EditorRight")
-<user.movement_verbs> last <phrase> [over]: user.idea_movement(movement_verbs, "find prev {phrase}, action EditorRight")
-
-#custom commands
-auto select:
-    key(alt-enter)
-=======
 <user.navigation_verbs> next (error | air): user.idea_movement(navigation_verbs, "action GotoNextError")
 <user.navigation_verbs> last (error | air): user.idea_movement(navigation_verbs, "action GotoPreviousError")
 <user.navigation_verbs> this: user.idea_movement(navigation_verbs, "")
->>>>>>> upstream/master:apps/jetbrains/jetbrains.talon
