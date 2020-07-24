@@ -1,9 +1,9 @@
 os: windows
-app: Microsoft Edge
-app: MicrosoftEdge.exe
+app: Google Chrome
+app: chrome.exe
 -
 tag(): browser
-	
+tag(): tabs
 #action(browser.address):
 
 action(browser.bookmark):
@@ -44,13 +44,13 @@ action(browser.go_home):
 	key(alt-home)
 
 action(browser.open_private_window):
-	key(ctrl-shift-p)
+	key(ctrl-shift-n)
 
 action(browser.reload):
 	key(ctrl-r)
 
 action(browser.reload_hard):
-	key(shift-f5)
+	key(ctrl-shift-r)
 
 #action(browser.reload_hardest):
 	

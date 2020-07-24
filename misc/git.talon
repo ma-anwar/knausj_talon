@@ -8,7 +8,6 @@ app: Gnome-terminal
 app: Mate-terminal
 tag: terminal
 -
-
 # Standard commands
 git add patch: "git add . -p\n"
 git add: "git add "

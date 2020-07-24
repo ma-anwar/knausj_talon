@@ -7,9 +7,6 @@ go <user.arrows>: key(arrows)
 <user.function>: key(function)
 <user.special>: key(special)
 <user.key>: key(key)
-""" Test
-comment
-"""
 <number>: insert(number)
 
 

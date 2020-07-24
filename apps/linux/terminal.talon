@@ -5,6 +5,8 @@ app: Mate-terminal
 tag(): terminal
 tag(): file_manager
 tag(): gdb
+#todo: generic tab commands
+#tag(): tabs
 action(edit.page_down):
   key(shift-pagedown)
 action(edit.page_up):

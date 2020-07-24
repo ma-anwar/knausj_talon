@@ -7,12 +7,12 @@ tag(): user.code_comment
 tag(): user.code_generic
 
 settings():
-    user.code_private_function_formatter = "CAMEL_CASE"
-    user.code_protected_function_formatter = "CAMEL_CASE"
-    user.code_public_function_formatter = "CAMEL_CASE"
-    user.code_private_variable_formatter = "CAMEL_CASE"
-    user.code_protected_variable_formatter = "CAMEL_CASE"
-    user.code_public_variable_formatter = "CAMEL_CASE"
+    user.code_private_function_formatter = "PRIVATE_CAMEL_CASE"
+    user.code_protected_function_formatter = "PRIVATE_CAMEL_CASE"
+    user.code_public_function_formatter = "PRIVATE_CAMEL_CASE"
+    user.code_private_variable_formatter = "PRIVATE_CAMEL_CASE"
+    user.code_protected_variable_formatter = "PRIVATE_CAMEL_CASE"
+    user.code_public_variable_formatter = "PRIVATE_CAMEL_CASE"
 
 action(user.code_is_not_null): " !== null"
 
@@ -39,6 +39,9 @@ action(user.code_self): "this"
 action(user.code_state_while):
   insert("while ()")
   key(left)
+
+action(user.code_state_return):
+  insert("return ")
 
 action(user.code_state_for):
   insert("for ()")
@@ -70,14 +73,14 @@ action(user.code_type_definition): ""
 
 action(user.code_typedef_struct): ""
 
-action(user.code_for_each):
+action(user.code_state_for_each):
   insert(".forEach()")
   key(left)
 
 action(user.code_null): "null"
 
-action(user.code_private_function): ""
-action(user.code_protected_function): ""
+action(user.code_private_function): "function "
+action(user.code_protected_function): "function "
 action(user.code_public_function): "function "
 
 action(user.code_operator_indirection): ""

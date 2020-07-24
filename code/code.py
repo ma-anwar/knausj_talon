@@ -29,7 +29,8 @@ extension_lang_map = {
     "go": "go",
     "kt": "kotlin",
     "hs": "haskell",
-    
+    "js": "javascript",
+    "ts": "typescript"
 }
 
 #flag indicates whether or not the title tracking is enabled
@@ -65,11 +66,8 @@ class Actions:
     def code_set_language_mode(language: str):
         """Sets the active language mode, and disables extension matching"""
         global forced_language
-        for __, lang in extension_lang_map.items():
-            if lang != language:
-                actions.mode.disable("user.{}".format(lang))
-            else:
-                actions.mode.enable("user.{}".format(lang))
+        actions.user.code_clear_language_mode()
+        actions.mode.enable("user.{}".format(language))
 
         forced_language = True
 
@@ -230,6 +228,9 @@ class Actions:
 
     def code_state_while():
         """Inserts while statement"""
+
+    def code_state_return():
+        """Inserts return statement"""
     
     def code_try_catch():
         """Inserts try/catch. If selection is true, does so around the selecion"""

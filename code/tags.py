@@ -2,9 +2,9 @@ from talon import Context, Module
 
 mod = Module()
 
-tagList = ["firefox", "gdb", "tmux"]
+tagList = ["firefox", "gdb", "tmux", "tabs"]
 modes = {
-    "gdb" : "a way to force gdb commands to be loaded"
+    "gdb" : "a way to force gdb commands to be loaded",
 }
 
 for entry in tagList:
@@ -12,4 +12,3 @@ for entry in tagList:
     
 for key, value in modes.items():
     mod.mode(key, value)
-
