@@ -53,6 +53,8 @@ digits_map = {n: i for i, n in enumerate(digits)}
 teens_map = {n: i + 11 for i, n in enumerate(teens)}
 tens_map = {n: 10 * (i + 1) for i, n in enumerate(tens)}
 digits_map["oh"] = 0
+digits_map["nil"] = 0
+digits_map["null"] = 0
 
 scales_map = {scales[0]: 100}
 scales_map.update({n: 10 ** ((i + 1) * 3) for i, n in enumerate(scales[1:])})

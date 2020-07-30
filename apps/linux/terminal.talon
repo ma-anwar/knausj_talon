@@ -57,7 +57,7 @@ done:
 save and quit:
  insert(":wq" )
  key(enter) 
-less: "less "
+state less: "less "
 state remove: "rm "
 state remove recursively: "rm -rf "
 state touch: "touch "

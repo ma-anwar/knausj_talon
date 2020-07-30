@@ -68,6 +68,7 @@ ctx.lists["user.abbreviation"] = {
     "keyword": "kw",
     "keyword arguments": "kwargs",
     "language": "lng",
+    "latex": "tex",
     "library": "lib",
     "length": "len",
     "markdown": "md",

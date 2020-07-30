@@ -3,8 +3,8 @@ settings():
 slap:
 	edit.line_end()
 	key(enter)
-grep: "grep "
-elle less: "ls "
+#grep: "grep "
+#elle less: "ls "
 run L S: "ls\n"
 run (S S H | S H): "ssh"
 run diff: "diff "
