@@ -4,7 +4,7 @@ ctx = Context()
 mod = Module()
 
 ctx.matches = r'''
-tag: terminal
+tag: splits
 '''
 @ctx.action_class('user')
 class user_actions:

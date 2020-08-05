@@ -22,6 +22,7 @@ extension_lang_map = {
     "cs": "csharp",
     "cpp": "cplusplus",
     "h": "cplusplus",
+    "java": 'java',
     "talon": "talon",
     "gdb": "gdb",
     "md": "markdown",
