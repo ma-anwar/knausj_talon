@@ -48,9 +48,9 @@ go page up:
     edit.page_up()
 
 # selecting
-select line:
-    edit.line_start()
-    edit.extend_line_end()
+#select line:
+#    edit.line_start()
+#    edit.extend_line_end()
 
 select all:
     edit.select_all()

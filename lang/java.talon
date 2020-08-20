@@ -1,6 +1,5 @@
 code.language: java
 -
-
 tag(): user.code_operators
 tag(): user.code_comment
 tag(): user.code_generic
@@ -73,7 +72,7 @@ action(user.code_state_while):
     edit.left()
 	edit.left()
 action(user.code_type_class): "class "
-action(user.code_comment): "//
+action(user.code_comment): "//"
 action(user.code_private_function):
 	insert("private")
 action(user.code_protected_function):

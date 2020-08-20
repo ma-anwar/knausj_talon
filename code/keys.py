@@ -3,7 +3,7 @@ from typing import Set
 from talon import Module, Context, actions
 import sys
     
-default_alphabet = 'air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale tox yank zip'.split(' ')
+default_alphabet = 'air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale tox yell zip'.split(' ')
 letters_string = 'abcdefghijklmnopqrstuvwxyz'
 
 default_digits = 'zero one two three four five six seven eight nine'.split(' ')
@@ -94,8 +94,8 @@ ctx.lists['self.symbol'] = {
     'colon': ':',
     'paren': '(', 'L paren': '(', 'left paren': '(',
     'R paren': ')', 'right paren': ')',
-    'brace': '{', 'left brace': '{',
-    'R brace': '}', 'right brace': '}',
+    'left brace': '{', 'left brace': '{',
+    'right brace': '}', 'right brace': '}',
     'angle': '<', 'left angle': '<', 'less than': '<',
     'rangle': '>', 'R angle': '>', 'right angle': '>', 'greater than': '>',
     'star': '*', 'asterisk': '*',

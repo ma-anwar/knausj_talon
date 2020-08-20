@@ -12,7 +12,7 @@ phrase <user.text> <user.symbol>$:
 phrase <user.text> over: insert(user.text)
 (say | speak) <user.spaceText>$: insert(user.spaceText)
 (say | speak) <user.spaceText> over: insert(user.spaceText)
-word <user.word>: insert(user.word)
+//word <user.word>: insert(user.word)
 list formatters: user.list_formatters()
 hide formatters: user.hide_formatters()
 ^nope that$: user.clear_last_phrase()

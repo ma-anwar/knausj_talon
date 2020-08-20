@@ -39,7 +39,7 @@ hidden_cursor = os.path.join(os.path.dirname(os.path.realpath(__file__)), "Resou
 
 mod = Module()
 mod.list('mouse_button', desc='List of mouse button words to mouse_click index parameter')
-setting_mouse_enable_pop_click = mod.setting('mouse_enable_pop_click', type=int, default=0,desc="Enable pop to click when control mouse is enabled.")
+setting_mouse_enable_pop_click = mod.setting('mouse_enable_pop_click', type=int, default=1,desc="Enable pop to click when control mouse is enabled.")
 setting_mouse_enable_pop_stops_scroll = mod.setting('mouse_enable_pop_stops_scroll', type=int,default=0,desc="When enabled, pop stops continuous scroll modes (wheel upper/downer/gaze)")
 setting_mouse_wake_hides_cursor = mod.setting('mouse_wake_hides_cursor', type=int, default=0,desc="When enabled, mouse wake will hide the cursor. mouse_wake enables zoom mouse.")
 setting_mouse_hide_mouse_gui = mod.setting('mouse_hide_mouse_gui', type=int, default=0,desc="When enabled, the 'Scroll Mouse' GUI will not be shown.")
@@ -190,10 +190,12 @@ def show_cursor_helper(show):
         ctrl.cursor_visible(show)
 
 def on_pop(active):
+    print('we got here')
     if (gaze_job or scroll_job):
         if setting_mouse_enable_pop_stops_scroll.get() >= 1:
             stop_scroll()
-    elif not eye_zoom_mouse.zoom_mouse.enabled and eye_mouse.mouse.attached_tracker is not None:
+    #elif not eye_zoom_mouse.zoom_mouse.enabled and eye_mouse.mouse.attached_tracker is not None:
+    else:
         if setting_mouse_enable_pop_click.get() >= 1:
             ctrl.mouse_click(button=0, hold=16000)
 
