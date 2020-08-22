@@ -2,9 +2,9 @@
 from talon import Context
 ctx = Context()
 #in case we need to match
-# ctx.matches = r'''
-# mode: dictation
-# '''
+ctx.matches = r'''
+mode: dictation
+'''
 ctx.settings['dictate.word_map'] = {
     'i': 'I',
     "i'm": "I'm",
@@ -19,4 +19,8 @@ ctx.settings['dictate.word_map'] = {
     "no space": "null space",
     "cotton": "kotlin",
     "colon" : ":",
+    "brother": "bro",
+    "wo": "wow",
+    "laugh": "lol",  
 }
+  

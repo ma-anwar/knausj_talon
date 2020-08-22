@@ -13,3 +13,8 @@ semi colon: user.dictate(";")
 cap <user.text>: 
     result = user.formatted_text(user.text, "CAPITALIZE_FIRST_WORD")
     user.dictate(result)  
+laugh big:" LOL "
+laugh long:" looool "
+slap: key(enter)
+ponder: " hmmmm "
+

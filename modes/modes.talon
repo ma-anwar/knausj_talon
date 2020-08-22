@@ -34,6 +34,12 @@ talon mode: speech.enable()
     mode.enable("user.gdb")
 disable debug mode:
     mode.disable("user.gdb")
+
+[enable] terminal mode:
+    mode.enable("user.terminal")
+disable terminal mode:
+    mode.disable("user.terminal")
+    
 ^force see sharp$: user.code_set_language_mode("csharp")
 ^force see plus plus$: user.code_set_language_mode("cplusplus")
 ^force haskell$: user.code_set_language_mode("haskell")

@@ -5,6 +5,7 @@ mod = Module()
 tagList = ["firefox", "gdb", "tmux", "tabs"]
 modes = {
     "gdb": "a way to force gdb commands to be loaded",
+    'terminal':'command line commence',
 }
 
 for entry in tagList:

@@ -365,7 +365,6 @@ push <user.any>:
 
 insert <user.text>:
     user.vim_insert_mode("{text}")
-d$hellodd
 # helpful for fixing typos or bad lexicons that miss a character
 inject <user.any> [before]:
     user.vim_insert_mode_key("{any}")
