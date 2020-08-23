@@ -1,6 +1,6 @@
 win.title: /VIM MODE:t/
 -
-tag(): terminal
+tag(): user.terminal
 
 (pop terminal|vim mode):
     key(ctrl-\ ctrl-n)

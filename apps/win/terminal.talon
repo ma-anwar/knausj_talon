@@ -1,10 +1,8 @@
-os: windows
-app: Windows Command Processor
-app: cmd.exe
-app: WindowsTerminal.exe
+app: windows_terminal
+app: windows_command_processor
 -
-tag(): terminal
-tag(): file_manager
+tag(): user.terminal
+tag(): user.file_manager
 
 run last: key(up enter)
 

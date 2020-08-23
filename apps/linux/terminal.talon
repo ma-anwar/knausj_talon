@@ -2,9 +2,9 @@ os: linux
 app: Gnome-terminal
 app: Mate-terminal
 -
-tag(): terminal
-tag(): file_manager
-tag(): gdb
+tag(): user.terminal
+tag(): user.gdb
+tag(): user.file_manager
 #todo: generic tab commands
 #tag(): tabs
 action(edit.page_down):

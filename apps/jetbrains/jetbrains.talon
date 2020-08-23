@@ -1,19 +1,10 @@
 # Requires https://plugins.jetbrains.com/plugin/10504-voice-code-idea
-app: /jetbrains/
-app: IntelliJ IDEA
-app: idea64.exe
-app: PyCharm
-app: PyCharm64.exe
-app: jetbrains-studio
-# When tags are supported
-#tags: ide
-app: pycharm64.exe
-app: webstorm64.exe
+app: jetbrains
 -
-tag(): line_commands
-tag(): multiple_cursors
-tag(): splits 
-tag(): tabs
+tag(): user.line_commands
+tag(): user.multiple_cursors
+tag(): user.splits 
+tag(): user.tabs
 
 #talon app actions (+custom tab actions)
 action(user.tab_final): user.idea("action GoToLastTab")

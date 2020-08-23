@@ -1,7 +1,7 @@
 os: linux
 tag: terminal 
 -
-tag(): splits
+tag(): user.splits
 mux: "tmux "
 
 #session management

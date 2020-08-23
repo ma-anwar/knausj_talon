@@ -5,7 +5,7 @@ os: linux
 mode: user.gdb
 
 -
-tag(): gdb
+tag(): user.gdb
 continue:
     insert("c")
     key(enter)

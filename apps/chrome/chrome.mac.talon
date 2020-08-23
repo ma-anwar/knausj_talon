@@ -1,8 +1,8 @@
 os: mac
-app: Google Chrome
+app: chrome
 -
-tag(): browser
-tag(): tabs
+tag(): user.browser
+tag(): user.tabs
 #action(browser.address):
 
 action(browser.bookmark):
