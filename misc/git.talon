@@ -6,8 +6,9 @@ app: Windows Command Processor
 app: ConEmu64.exe
 app: Gnome-terminal
 app: Mate-terminal
-tag: terminal
 -
+tag(): user.terminal
+
 # Standard commands
 git add patch: "git add . -p\n"
 git add: "git add "
