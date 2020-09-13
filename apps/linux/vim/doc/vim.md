@@ -355,7 +355,7 @@ With character arguments:
     "parenthesis": "(",
     "angle brackets": "<",
     "curly braces": "{",
-    "curly": "{",
+    "braces": "{",
     "square brackets": "[",
     "squares ": "[",
     "brackets": "[",

@@ -36,14 +36,15 @@ disable debug mode:
     mode.disable("user.gdb")
 
 [enable] terminal mode:
-    mode.enable("user.terminal")
+    mode.enable("user.commandline")
 disable terminal mode:
-    mode.disable("user.terminal")
+    mode.disable("user.commandline")
     
 ^force see sharp$: user.code_set_language_mode("csharp")
 ^force see plus plus$: user.code_set_language_mode("cplusplus")
 ^force haskell$: user.code_set_language_mode("haskell")
 ^force go (lang|language)$: user.code_set_language_mode("go")
+^force java: user.code_set_language_mode("java")
 ^force java script$: user.code_set_language_mode("javascript")
 ^force type script$: user.code_set_language_mode("typescript")
 ^force markdown$: user.code_set_language_mode("markdown")

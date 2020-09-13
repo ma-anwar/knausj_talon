@@ -1,4 +1,5 @@
 tag: user.splits
+not title: /VIM/
 -
 #split right: user.split_window_right()
 #split left: user.split_window_left()

@@ -1,13 +1,15 @@
-#NOTE: these are command line commands, not shell-specific bindings
+# NOTE: these are command line commands, not shell-specific bindings
 # see shell.talon for shell-specific keybindings
 os: linux
-mode: user.terminal
+mode: user.commandline
 mode: command
+and tag: terminal
 -
-(list|lisa): "ls\n"
-(list|lisa) long: "ls -al\n"
-(list|lisa) <user.text>: "ls {text}"
-(list|lisa) (deer|dir): "ls "
+lisa: "ls\n"
+lisa long: "ls -al\n"
+lisa <user.text>: "ls {text}"
+lisa (deer|dir): "ls "
+lisa access: "ls -r --time=access -1\n"
 
 # directory and files
 katie: "cd "
@@ -23,7 +25,7 @@ make (dur|dear|dir|directory) <user.text>: "mkdir {text}"
 remove (dur|dear|dir|directory): "rmdir "
 remove (dur|dear|dir|directory) <user.text>: "rmdir {text}"
 remove file: "rm "
-tree: "tree\n"
+show tree: "tree\n"
 temp (dur|dear|dir|directory): "cd /tmp\n"
 pop (dur|dear|dir|directory): "popd\n"
 
@@ -47,7 +49,7 @@ move file: "mv "
 copy file: "cp "
 
 # file viewing
-less: "less "
+show less: "less "
 now less [that]:
     edit.up()
     insert("| less\n")
@@ -188,16 +190,18 @@ reboot system: "sudo reboot -h now"
 # unsorted
 #zed s h: "zsh"
 #cd: "cd "
-#grep: "grep "
 #elle less: "ls "
 #run L S: "ls\n"
 #run (S S H | S H): "ssh"
 #diff: "diff "
-#run vim: "vim "
+run vim: "nvim "
 #run make: "make\n"
 #run make (durr | dear): "mkdir "
+run reader: "zathura "
 
 #export <user.text>:
 
 #
 errors to standard out: "2>&1 "
+#temporary command to adjust brightness
+brightness fix: "xrandr --output eDP-1 --brightness "

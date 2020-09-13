@@ -32,7 +32,7 @@ os mac:
 	insert("os: mac")
 os lunix:
 	insert("os: linux")
-app:
+application:
 	insert("app: ")
 settings:
 	insert("settings():\n")

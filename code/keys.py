@@ -224,9 +224,9 @@ def symbol(m):
 def function(m):
     return m.function
 
-
+#note to self: removed reference to user.number
 @ctx.capture(
-    rule="(<self.arrow> | <self.number> | <self.letter> | <self.symbol> | <self.function> | <self.special>)"
+    rule="(<self.arrow> | <self.letter> | <self.symbol> | <self.function> | <self.special>)"
 )
 def any(m) -> str:
     return str(m)

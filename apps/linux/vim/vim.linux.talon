@@ -13,7 +13,7 @@ win.title: /VIM/
 -
 
 tag(): user.vim
-tag(): user.tab
+tag(): user.tabs
 settings():
     # Whether or not to always revert back to the previous mode. Example, if
     # you are in insert mode and say 'delete word' it will delete one word and
@@ -29,7 +29,7 @@ settings():
     # Select whether or not talon should dispatch notifications on mode changes
     # that are made. Not yet completed, as notifications are kind of wonky on
     # Linux
-    user.vim_notify_mode_changes = 1
+    user.vim_notify_mode_changes = 0
 
     # Whether or not all commands that transfer out of insert mode should
     # automatically escape out of terminal mode. Turning this on is quite
@@ -56,7 +56,7 @@ settings():
     # It how long to wait before issuing commands after a mode change. You
     # want adjust this if when you say things like undo from INSERT mode, an
     # "u" gets inserted into INSERT mode
-    user.vim_mode_change_timeout = 0.30
+    user.vim_mode_change_timeout = 0.25
 
     # When you preserve mode and switch into into insert mode it will often
     # move your cursor, which can mess up the commands you're trying to run from
@@ -64,7 +64,7 @@ settings():
     user.vim_mode_switch_moves_cursor = 0
 
     # Whether or not use rpc if it is available
-    user.vim_use_rpc = 0
+    user.vim_use_rpc = 1
 
     # Adds debug output to the talon log
     user.vim_debug = 1
@@ -151,7 +151,7 @@ action(edit.undo):
     user.vim_normal_mode_key("u")
 
 ###
-# `code/vim.py` actions based on vimspeak
+# `code/vim.py` actions - includes most motions and core commands
 ###
 # commands that can be triggered in visual or normal mode, and generally don't
 # have counting, etc
@@ -261,7 +261,7 @@ scroll bottom reset cursor: user.vim_normal_mode_exterm("z ")
 
 ###
 # Text editing, copying, and manipulation
-#e##
+###
 
 change remaining line: user.vim_normal_mode_key("C")
 change line: user.vim_normal_mode("cc")
@@ -279,9 +279,9 @@ swap paragraph:
     user.vim_normal_mode("d}}")
     user.vim_normal_mode("p")
 replace <user.any>:
-    user.vim_normal_mode("r{any}")
+    user.vim_any_motion_mode("r{any}")
 replace (ship|upper|upper case) <user.letters>:
-    user.vim_normal_mode_key("r")
+    user.vim_any_motion_mode_key("r")
     user.keys_uppercase_letters(letters)
 
 # indenting
@@ -307,8 +307,10 @@ delete (until|till) line <number>:
     insert("''d")
 
 
-clear line:
-    user.vim_insert_mode_key("ctrl-u")
+# XXX - seems buggy
+#clear line:
+#    user.vim_insert_mode_key("ctrl-u")
+
 wipe line:
     user.vim_normal_mode("0d$")
 
@@ -365,6 +367,7 @@ push <user.any>:
 
 insert <user.text>:
     user.vim_insert_mode("{text}")
+
 # helpful for fixing typos or bad lexicons that miss a character
 inject <user.any> [before]:
     user.vim_insert_mode_key("{any}")
@@ -372,7 +375,7 @@ inject <user.any> [before]:
     key(escape)
 
 inject <user.any> after:
-    user.vim_normal_mode("a{any}")
+    user.vim_normal_mode_key("a {any}")
     # since we can't perserve mode with ctrl-o
     key(escape)
 
@@ -457,6 +460,7 @@ close (bufs|buffers): user.vim_command_mode_exterm(":bd ")
 (buf|buffer) rename: user.vim_command_mode_exterm(":file ")
 (buf|buffer) rename <user.text>: user.vim_command_mode_exterm(":file {text}")
 new (empty|unnamed) buffer: user.vim_command_mode_exterm(":enew\n")
+(buf|buffer) do: user.vim_command_mode_exterm(":bufdo ")
 
 ###
 # Splits
@@ -511,7 +515,7 @@ split new vertical:
 # open specified buffer in new split
 split (buf|buffer) <number_small>:
     user.vim_set_normal_mode_exterm()
-    key("{number_small}")
+    insert("{number_small}")
     key("ctrl-w")
     key("ctrl-^")
 
@@ -667,6 +671,9 @@ set split width:
 set split height:
     user.vim_set_command_mode_exterm(":vertical resize ")
 
+(split|window) do:
+    user.vim_command_mode_exterm(":windo ")
+
 ###
 # Diffing
 ###
@@ -717,27 +724,27 @@ edit (buf|buffer) <number_small> [in] new tab: user.vim_command_mode_exterm(":ta
 # XXX - this is a weird edge case because we actually probably want to slip back
 # to the terminal mode after setting options, but atm
 # user.vim_normal_mode_exterm() implies no preservation
-(show|set) highlight search: user.vim_command_mode_exterm(":set hls\n")
-(unset|set no|hide) highlight search:
+show highlight search: user.vim_command_mode_exterm(":set hls\n")
+hide highlight search:
     user.vim_command_mode_exterm(":set nohls\n")
 # only disable until next search
 hide highlights:
     user.vim_command_mode_exterm(":noh\n")
-(show|set) line numbers: user.vim_command_mode_exterm(":set nu\n")
-(show|set) absolute [line] [numbers]:
+show line numbers: user.vim_command_mode_exterm(":set nu\n")
+show absolute [line] [numbers]:
     user.vim_command_mode_exterm(":set norelativenumber\n")
     user.vim_command_mode_exterm(":set number\n")
-(show|set) relative [line] [numbers]:
+hide relative [line] [numbers]:
     user.vim_command_mode_exterm(":set nonumber\n")
     user.vim_command_mode_exterm(":set relativenumber\n")
-(unset|set no|hide) line numbers: user.vim_command_mode_exterm(":set nonu\n")
+hide line numbers: user.vim_command_mode_exterm(":set nonu\n")
 show [current] settings: user.vim_command_mode_exterm(":set\n")
-(unset paste|set no paste): user.vim_command_mode_exterm(":set nopaste\n")
+hide paste: user.vim_command_mode_exterm(":set nopaste\n")
 # very useful for reviewing code you don't want to accidintally edit if talon
 # mishears commands
-set modifiable:
+show modify:
     user.vim_command_mode_exterm(":set modifiable\n")
-(unset modifiable|set no modifiable):
+hide modify:
     user.vim_command_mode_exterm(":set nomodifiable\n")
 show filetype:
     user.vim_command_mode_exterm(":set filetype\n")
@@ -796,7 +803,7 @@ show (register|macro) <user.letter>: user.vim_command_mode(":reg {letter}\n")
 play macro <user.letter>: user.vim_any_motion_mode("@{letter}")
 repeat macro: user.vim_any_motion_mode("@@")
 record macro <user.letter>: user.vim_any_motion_mode("q{letter}")
-(finish macro|stop recording): user.vim_any_motion_mode("q")
+(finish macro|cancel macro|stop macro|stop recording): user.vim_any_motion_mode("q")
 modify [register|macro] <user.letter>:
     user.vim_command_mode(":let @{letter}='")
     key(ctrl-r)
@@ -977,6 +984,7 @@ prefix with <user.any>:
 ##x
 (select|highlight) all: user.vim_normal_mode_exterm("ggVG")
 reselect: user.vim_normal_mode_exterm("gv")
+make ascending: user.vim_normal_mode_key("g ctrl-a")
 
 ###
 # Terminal mode
@@ -1014,6 +1022,55 @@ open all folds: user.vim_normal_mode("zR")
 close all folds: user.vim_normal_mode("zM")
 
 ###
+# QuickFix list
+###
+vim grep:
+    user.vim_command_mode(":vimgrep // */*")
+    key(left:5)
+
+quick [fix] next: user.vim_command_mode(":cn\n")
+quick [fix] (prev|previous): user.vim_command_mode(":cp\n")
+quick [fix] (show|hide): user.vim_command_mode(":cw\n")
+quick [fix] close: user.vim_command_mode(":ccl\n")
+quick [fix] bottom: user.vim_command_mode(":cbo\n")
+quick [fix] do:
+    user.vim_command_mode(":cdo | update")
+    key(left:9)
+set auto write all: user.vim_command_mode(":set autowriteall\n")
+
+###
+# Functions
+###
+function list:
+    user.vim_command_mode(":function\n")
+
+function show:
+    user.vim_command_mode(":function ")
+function show brief:
+    user.vim_command_mode(":function! ")
+function search:
+    user.vim_command_mode(":function / ")
+function call:
+    user.vim_command_mode(":call ")
+recall last function:
+    user.vim_command_mode(":call ")
+    key(up)
+    key(enter)
+
+###
+# Argument list
+###
+(arg|argument) do:
+    user.vim_command_mode(":argdo | update")
+    key(left:9)
+(arg|argument) files:
+    user.vim_command_mode(":arg ")
+(arg|argument) list show:
+    user.vim_command_mode(":arg\n")
+(arg|argument) add:
+    user.vim_command_mode(":argadd ")
+
+###
 # Command mode
 ###
 last command:
@@ -1030,7 +1087,6 @@ nerd tree: user.vim_normal_mode_exterm(":NERDTree\n")
 ###
 # Convenience
 ###
-
 run as python:
     user.vim_normal_mode_np(":w\n")
     insert(":exec '!python' shellescape(@%, 1)\n")
@@ -1048,6 +1104,10 @@ show unsaved changes:
 
 swap again:
     key(g &)
+
+pinch: user.vim_normal_mode("0x")
+prefix <user.any>: user.vim_normal_mode("^i{any}")
+
 
 # useful for turning a git status list already yanked into a register into a
 # space delimited list you can peace unto the command line

@@ -1,7 +1,7 @@
-tag: vim
+tag: user.vim
 -
 
-(fuzzy (grep|rip)|rizzle): user.vim_normal_mode_exterm(":Rg\n")
+(fuzzy (grep|rip)|rizzle): user.vim_normal_mode_exterm(":Rg ")
 (fuzzy (grep|rip)|rizzle) <user.text>:
     user.vim_normal_mode_exterm(":Rg\n")
     insert("{text}")

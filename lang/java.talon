@@ -1,4 +1,7 @@
-code.language: java
+mode: user.java
+mode: command
+and code.language: java
+
 -
 tag(): user.code_operators
 tag(): user.code_comment
@@ -32,9 +35,9 @@ action(user.code_operator_less_than_or_equal_to): " <= "
 action(user.code_operator_and): " && "
 action(user.code_operator_or): " || "
 action(user.code_operator_bitwise_and): " & "
-action(user.code_operator_bitwise_and_assignment): " &= " 
+action(user.code_operator_bitwise_and_equals): " &= " 
 action(user.code_operator_bitwise_or): " | "
-action(user.code_operator_bitwise_or_assignment): " |= "
+action(user.code_operator_bitwise_or_equals): " |= "
 action(user.code_operator_bitwise_exlcusive_or): " ^ "
 action(user.code_operator_bitwise_exlcusive_or_assignment): " ^= "
 action(user.code_operator_bitwise_left_shift): " << "

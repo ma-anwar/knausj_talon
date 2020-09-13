@@ -8,5 +8,7 @@ go <user.arrows>: key(arrows)
 <user.special>: key(special)
 <user.key>: key(key)
 <number>: insert(number)
+#<user.modifiers>: key(modifiers)
+
 
 

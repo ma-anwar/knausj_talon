@@ -40,36 +40,36 @@ action(edit.word_left):
 action(edit.word_right):
   key(ctrl-w-right) 
 # my code
-state move: insert("mv ")
-state find: insert("find ")
-declare terminal <phrase>: 
- insert("termtitle ")
- insert(phrase)
-state cat: "cat "
-state more: "more "
-
-exit:
- insert(":q!" )
- key(enter) 
-done:
- insert(":w" )
- key(enter) 
-save and quit:
- insert(":wq" )
- key(enter) 
-state less: "less "
-state remove: "rm "
-state remove recursively: "rm -rf "
-state touch: "touch "
-state admin: "sudo "
-state docker: "docker "
-list: 
-  insert("ls")
-  key(enter)
-list all:
-  insert("ls -a")
-  key(enter)
-clear: "clear\n"
+#state move: insert("mv ")
+#state find: insert("find ")
+#declare terminal <phrase>: 
+# insert("termtitle ")
+# insert(phrase)
+#state cat: "cat "
+#state more: "more "
+#
+#exit:
+# insert(":q!" )
+# key(enter) 
+#done:
+# insert(":w" )
+# key(enter) 
+#save and quit:
+# insert(":wq" )
+# key(enter) 
+#state less: "less "
+#state remove: "rm "
+#state remove recursively: "rm -rf "
+#state touch: "touch "
+#state admin: "sudo "
+#state docker: "docker "
+#list: 
+#  insert("ls")
+#  key(enter)
+#list all:
+#  insert("ls -a")
+#  key(enter)
+#clear: "clear\n"
 action(app.tab_open):
   key(ctrl-shift-t)
 action(app.tab_close):

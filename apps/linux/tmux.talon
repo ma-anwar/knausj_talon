@@ -1,5 +1,5 @@
 os: linux
-tag: terminal 
+tag: user.terminal 
 -
 tag(): user.splits
 mux: "tmux "
@@ -12,6 +12,12 @@ mux sessions:
 mux name session:
     key(ctrl-b)
     key($)
+mux save session:
+    key(ctrl-b)
+    key(ctrl-s)
+mux load session:
+    key(ctrl-b)
+    key(ctrl-r)
 mux kill session: 'tmux kill-session -t'
 #window management
 mux new window:

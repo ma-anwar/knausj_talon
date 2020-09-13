@@ -1,4 +1,4 @@
-tag: vim
+tag: user.vim
 -
 
 ###
@@ -19,7 +19,8 @@ open python snippets:
     user.vim_command_mode_exterm(":e ~/.vim/plugged/vim-snippets/UltiSnips/python.snippets\n")
 open bash snippets:
     user.vim_command_mode_exterm(":e ~/.vim/plugged/vim-snippets/UltiSnips/sh.snippets\n")
-
+open vim config:
+    user.vim_command_mode_exterm(":e ~/.vimrc\n")
 ###
 #
 ###
@@ -73,3 +74,14 @@ re nest this:
     user.vim_set_visual_block_mode()
     key(} up)
     key(0 I > escape)
+
+###
+# VimScript function shortcuts
+###
+
+convert string to stack:
+    user.vim_command_mode(":call String_to_stack_buffer()")
+    edit.left()
+
+#start server:
+#    insert(":echo serverstart()\n")
