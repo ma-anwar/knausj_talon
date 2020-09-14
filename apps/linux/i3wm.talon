@@ -23,6 +23,11 @@ launch <user.text>:
         key(super-d)
         sleep(100ms)
         insert("{text}")
+launch licks:
+    key(super-d)
+    sleep(100ms)
+    insert('lyx')
+    key(enter)
 reload i three config: key(super-shift-c)
 restart i three: key(super-shift-r)
 

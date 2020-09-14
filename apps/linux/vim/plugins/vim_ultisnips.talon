@@ -1,4 +1,5 @@
-app: user.vim
+win.title: /VIM/
+#app: user.vim
 -
 tag(): user.snippets
 tag(): user.ultisnips
