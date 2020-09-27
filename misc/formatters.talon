@@ -33,3 +33,12 @@ format copy <number>:
 ^nope that was <user.formatters>$:
   user.formatters_clear_last()
   insert(user.formatters_reformat_last(user.formatters))
+phrase <user.text> space:
+     insert(user.text)
+     insert(' ')
+     
+phrase <user.text> enter:
+    insert(user.text)
+    key(enter)
+
+

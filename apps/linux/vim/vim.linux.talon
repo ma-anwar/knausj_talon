@@ -389,6 +389,9 @@ filter line: "=="
     user.vim_command_mode(":pu _\n")
     user.vim_command_mode(":'[-1\n")
 
+#
+
+
 # XXX - This should be a callable function so we can do things like:
 #       '.swap on this <highlight motion>'
 #       'swap between line x, y'

@@ -1,8 +1,16 @@
 app: zathura
 -
+
+settings():
+    key_wait = 2
+    insert_wait = 2
 bookmark: ":bmark "
 bookmark delete: ":bdelete " 
-bookmark list: ":blist \n"
+
+bookmark list: 
+    insert(":")
+    sleep(50ms)
+    insert("blist \n")
 go <number>: "{number}G"
 go first: "gg"
 go last: "G" 
@@ -15,8 +23,8 @@ jump back:
 jump next:
     key(ctrl-i)
 search:  "/"
-neck: "J"
-back: "K"
+page next: "J"
+page back: "K"
 zoom in: "shift-+"
 zoom out: "+"
 mark set <number>: "m{number}"

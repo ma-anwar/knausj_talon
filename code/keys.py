@@ -248,6 +248,9 @@ class Actions:
     def keys_uppercase_letters(m: list):
         """Inserts uppercase letters from list"""
         actions.insert("".join(m).upper())
+    def keys_lower_case_letters(m: list):
+        """Inserts Lower His Letters From List"""
+        actions.insert("".join(m))
 
     def get_alphabet() -> dict:
         """Provides the alphabet dictionary"""

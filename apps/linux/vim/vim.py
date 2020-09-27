@@ -187,7 +187,7 @@ commands_with_motion = {
     "swap case": "~",
     # motions
     "change": "c",
-    # "delete": "d",
+    # "delete": "d
     "trim": "d",  # XXX - likely replace with clear
     #"clear": "d",  # this is to be consistent with talon generic_editor.talon
     "indent": ">",

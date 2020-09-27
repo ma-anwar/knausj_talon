@@ -16,7 +16,7 @@ def snippets(m) -> list:
 class Actions:
     def snippet_search(text: str):
         """Triggers the program's snippet search"""
-
+ 
     def snippet_insert(text: str):
         """Inserts a snippet"""
 

@@ -36,5 +36,9 @@ def update_list(watch_list):
 # watcher = snippet_watcher(
 #     {os.path.expandvars(r"%AppData%\Code\User\snippets"): ["python.json"],},
 #     update_list,
-# )
+    # )
+                
+            
+        
+    
 

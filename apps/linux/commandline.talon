@@ -203,5 +203,8 @@ run reader: "zathura "
 
 #
 errors to standard out: "2>&1 "
-#temporary command to adjust brightness
-brightness fix: "xrandr --output eDP-1 --brightness "
+java compile assignment:
+    insert('javac -d bin src/a0/Cfiltering.java src/driver/CfilteringDriver.java')
+java run assignment:
+    insert('java -cp bin/ driver.CfilteringDriver ')
+java compile: "javac "

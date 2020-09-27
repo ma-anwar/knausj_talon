@@ -1,3 +1,4 @@
+import time
 from talon import Context, Module, actions
 
 mod = Module()
@@ -21,4 +22,7 @@ class user_actions:
     def snippet_insert(text: str):
         """Inserts a snippet"""
         actions.user.vim_insert_mode(text)
+        time.sleep(0.4)
         actions.key("tab")
+   
+       

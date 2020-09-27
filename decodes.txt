@@ -1,0 +1,56 @@
+
+02020-09-24 23:50:54    IO DECODING
+detecting in viterbi toks: |||||||||||||||||||||||||||||||||||||||||||||ooopppeenn|||aaabboovvee||||||||||||||||||||||||||
+593.583 |||||||||||||||||||||||||||||||||||||||||||||oooopeeenn|||aaabboovvee||||||||||||||||||||||||||
+  result: @open @above
+
+2020-09-24 23:50:54    IO DECODED ['@open', '@above']
+2020-09-24 23:50:54    IO we got here
+2020-09-24 23:50:54    IO /tmp/nvimYlBbJx/0
+2020-09-24 23:50:54 DEBUG Using selector: EpollSelector
+2R02020-09-24 23:50:54 WARNING [watchdog] "talon.vad.<lambda>" @2.0s
+   29:              lib/python3.7/threading.py:890 | 
+   28:              lib/python3.7/threading.py:926 | 
+   27:              lib/python3.7/threading.py:870 | 
+   26:                           talon/cron.py:112 | 
+   25: --------------------------------------------# cron thread
+   24:                           talon/cron.py:77  | 
+   23:                 talon/scripting/rctx.py:199 | 
+   22: --------------------------------------------# 'cron' main:call()
+   21:                            talon/vad.py:16  | 
+   20:                    talon/engines/w2l.py:742 | 
+   19:             talon/scripting/dispatch.py:98  | 
+   18:             talon/scripting/dispatch.py:133 | 
+   17:             talon/scripting/dispatch.py:124 | 
+   16:                 talon/scripting/rctx.py:199 | 
+   15:        talon/scripting/speech_system.py:41  | 
+   14:             talon/scripting/dispatch.py:98  | 
+   13:             talon/scripting/dispatch.py:133 | 
+   12:             talon/scripting/dispatch.py:124 | 
+   11:                 talon/scripting/rctx.py:199 | 
+   10:        talon/scripting/speech_system.py:298 | 
+    9:                     talon/grammar/vm.py:174 | 
+    8:                     talon/grammar/vm.py:137 | 
+    7:        talon/scripting/speech_system.py:315 | 
+    6:                     talon/grammar/vm.py:174 | 
+    5:                     talon/grammar/vm.py:137 | 
+    4:        talon/scripting/speech_system.py:319 | 
+    3:                talon/scripting/types.py:318 | 
+    2: user/knausj_talon/apps/linux/vim/vim.py:891 | v.cancel_queued_commands()
+    1: user/knausj_talon/apps/linux/vim/vim.py:1306| time.sleep(timeout)
+1000002020-09-24 23:50:54    IO saved: /home/fr33dom/.talon/recordings/open above-100.flac
+2020-09-24 23:50:54    IO [audio]=1410.000ms  [emit]=39.472ms (0.03x)  [decode]=3.187ms (0.00x)  [total]=42.660ms (0.03x)
+02020-09-24 23:50:12    IO DECODING
+detecting in viterbi toks: ||||||||||||||||||||||||||||||||||||sspppriiiiitt|||||||||||
+363.691 ||||||||||||||||||||||||||||||||||||sspppriiiiitte||||||||||
+355.105 ||||||||||||||||||||||||||||||||||||||||rriiightt|||||||||||
+349.22 ||||||||||||||||||||||||||||||||||||sspppriiiiitte||||||int|
+  result: @sprite
+
+2020-09-24 23:50:12    IO DECODED ['@sprite']
+2020-09-24 23:50:12    IO we got here
+2020-09-24 23:50:12    IO /tmp/nvimYlBbJx/0
+2020-09-24 23:50:12 DEBUG Using selector: EpollSelector
+02020-09-24 23:50:12    IO saved: /home/fr33dom/.talon/recordings/sprite-16.flac
+2020-09-24 23:50:12    IO [audio]=720.000ms  [emit]=27.705ms (0.04x)  [decode]=5.147ms (0.01x)  [total]=32.852ms (0.05x)
+#

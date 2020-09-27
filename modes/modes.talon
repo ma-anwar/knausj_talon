@@ -35,9 +35,9 @@ talon mode: speech.enable()
 disable debug mode:
     mode.disable("user.gdb")
 
-[enable] terminal mode:
+^[enable] terminal mode$:
     mode.enable("user.commandline")
-disable terminal mode:
+^disable terminal mode$:
     mode.disable("user.commandline")
     
 ^force see sharp$: user.code_set_language_mode("csharp")
