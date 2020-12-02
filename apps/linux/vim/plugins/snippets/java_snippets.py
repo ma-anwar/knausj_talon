@@ -21,6 +21,7 @@ ctx.lists["user.snippets"] = {
         "assert equals":"ae",
         "array list":"d.al",
         "break":"br",
+        "block comment":"/*",
         "case":"cs",
         "catch":"ca",
         "class":"cl",

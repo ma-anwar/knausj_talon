@@ -197,7 +197,11 @@ reboot system: "sudo reboot -h now"
 run vim: "nvim "
 #run make: "make\n"
 #run make (durr | dear): "mkdir "
-run reader: "zathura "
+run reader:
+    insert('nohup zathura   &')
+    edit.left()
+    edit.left()
+    edit.left()
 
 #export <user.text>:
 
@@ -205,6 +209,16 @@ run reader: "zathura "
 errors to standard out: "2>&1 "
 java compile assignment:
     insert('javac -d bin src/a0/Cfiltering.java src/driver/CfilteringDriver.java')
+java compile to binary:
+    insert('javac -d bin ')
 java run assignment:
     insert('java -cp bin/ driver.CfilteringDriver ')
+java run binary:
+    insert('java -cp bin/ ')
 java compile: "javac "
+java run: "java "
+java format:
+    insert("java -jar ~/Documents/tools/google-java-format-1.9-all-deps.jar -r ")
+
+
+

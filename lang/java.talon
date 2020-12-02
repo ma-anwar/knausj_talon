@@ -45,7 +45,7 @@ action(user.code_operator_bitwise_left_shift_assignment): " <<= "
 action(user.code_operator_bitwise_right_shift): " >> "
 action(user.code_operator_bitwise_right_shift_assignment): " >>= "
 action(user.code_self): "self"
-action(user.code_null): "None"
+action(user.code_null): "null"
 action(user.code_is_null): " is None"
 action(user.code_is_not_null): " is not None"
 action(user.code_state_if): 
@@ -88,3 +88,7 @@ action(user.code_state_return):
 state break: 
     insert('break;')
     key(enter) 
+state none: "None "
+
+push:
+    edit.line_end()

@@ -1,10 +1,10 @@
 tag: user.splits
 not title: /VIM/
 -
-#split right: user.split_window_right()
-#split left: user.split_window_left()
-#split down: user.split_window_down()
-#split up: user.split_window_up()
+split right: user.split_window_right()
+split left: user.split_window_left()
+split down: user.split_window_down()
+split up: user.split_window_up()
 split vertically: user.split_window_vertically()
 split horizontally: user.split_window_horizontally()
 split flip: user.split_flip()

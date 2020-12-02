@@ -18,4 +18,7 @@ version log: 'svn log '
 version cat: 'svn cat '
 version annotate: 'svn annotate '
 version list: 'svn list '
-
+version ignore:
+    insert("svn propset svn:ignore  .")
+    edit.left()
+    edit.left()

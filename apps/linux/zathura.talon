@@ -23,7 +23,7 @@ jump back:
 jump next:
     key(ctrl-i)
 search:  "/"
-page next: "J"
+page neck: "J"
 page back: "K"
 zoom in: "shift-+"
 zoom out: "+"
