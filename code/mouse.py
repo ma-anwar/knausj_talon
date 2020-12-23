@@ -13,6 +13,7 @@ click_job = None
 scroll_job = None
 gaze_job = None
 cancel_scroll_on_pop = True
+reading_mode = False
 
 default_cursor = {
     "AppStarting": "%SystemRoot%\\Cursors\\aero_working.ani",
@@ -61,6 +62,14 @@ def gui_wheel(gui: imgui.GUI):
 
 @mod.action_class
 class Actions:
+    def enable_reading_mode():
+        """Test dub quoter"""
+        global reading_mode
+        reading_mode = True
+    def disable_reading_mode():
+        """Test dub quoter"""
+        global reading_mode
+        reading_mode = False
     def mouse_show_cursor():
         """Shows the cursor"""
         show_cursor_helper(True)
@@ -193,7 +202,12 @@ def show_cursor_helper(show):
 
 
 def on_pop(active):
+    global reading_mode
+    print(f"Reading motor is {reading_mode}")
     print('we got here')
+    if (reading_mode):
+        actions.key("pagedown")
+        return
     if (gaze_job or scroll_job):
         if setting_mouse_enable_pop_stops_scroll.get() >= 1:
             stop_scroll()
@@ -205,9 +219,14 @@ def on_pop(active):
     elif(not eye_zoom_mouse.zoom_mouse.enabled):
             if setting_mouse_enable_pop_click.get() >= 1:
                 ctrl.mouse_click(button=0, hold=16000)
+#def on_hiss(active):
+    #actions.insert("jjjjj")
+
 
 
 noise.register("pop", on_pop)
+#noise.register("hiss", on_hiss)
+
 
 
 def mouse_scroll(amount):

@@ -11,7 +11,8 @@ camera overlay: eye_mouse.camera_overlay.toggle()
 run calibration: user.mouse_calibrate()	
 touch: mouse_click(0)
 righty: mouse_click(1)
-
+reading mode: user.enable_reading_mode()
+disable reading mode: user.disable_reading_mode()
 #see keys.py for modifiers.
 #defaults
 #command
