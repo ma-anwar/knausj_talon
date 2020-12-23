@@ -49,7 +49,8 @@ class Actions:
             for item in manager.menu.items:
                 # print(item.name + " " + microphone)
                 if microphone in item.name:
-                    manager.menu_click(item)
+                    # manager.menu_click(item)
+                    actions.speech.set_microphone(item.name)
                     app.notify("Activating {}".format(item.name))
 
                     break
@@ -59,4 +60,10 @@ class Actions:
 
 ctx.register("devices_changed", devices_changed)
 
-update_microphone_list()
+
+def on_launch():
+    update_microphone_list()
+
+
+app.register("launch", on_launch)
+

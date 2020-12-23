@@ -51,9 +51,9 @@ mux next pane: user.split_next()
 action(user.split_next):
     key(ctrl-b)
     key(o)
-mux move <user.arrow>:
+mux move <user.arrow_key>:
     key(ctrl-b)
-    key(arrow)
+    key(arrow_key)
 mux close pane: user.split_clear()
 action(user.split_clear):
     key(ctrl-b)

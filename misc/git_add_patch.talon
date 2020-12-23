@@ -1,6 +1,8 @@
 app: /.*terminal/
 app: /.*term/
-title: /git add .*\-p/
+#tag: terminal 
+#and tag: user.git
+#title: /git add .*\-p/
 tag: terminal
 -
 yank:

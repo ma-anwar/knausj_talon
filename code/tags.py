@@ -2,15 +2,17 @@ from talon import Context, Module
 
 mod = Module()
 
-tagList = ["firefox", "gdb", "tmux", "tabs", "terminal"]
-modes = {
-    "gdb": "a way to force gdb commands to be loaded",
-    'commandline':'command line commence',
-}
-
+tagList = [
+    "debugger",
+    "disassembler",
+    "firefox",
+    "gdb",
+    "git",  # commandline tag for git commands
+    "ida",
+    "tabs",
+    "taskwarrior",  # commandline tag for taskwarrior commands
+    "tmux",
+    "windbg",
+]
 for entry in tagList:
     mod.tag(entry, f"tag to load {entry} and/or related plugins ")
-
-for key, value in modes.items():
-    mod.mode(key, value)
-

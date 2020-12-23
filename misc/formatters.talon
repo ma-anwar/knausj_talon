@@ -5,12 +5,12 @@
 (say | speak | phrase) <user.text> over: 
   result = user.formatted_text(text, "NOOP")
   insert(result)
-<user.format_text>$: insert(format_text)
-
+#<user.format_text>$: insert(format_text)
+#Consider modifying these in light of the new formatters
 <user.format_text> <user.symbol>$:
   insert(format_text)
   insert(symbol)
-<user.format_text> over: insert(format_text)
+#<user.format_text> over: insert(format_text)
 phrase <user.text>$: insert(user.text)
 phrase <user.text> <user.symbol>$: 
   insert(user.text)
@@ -21,6 +21,10 @@ phrase <user.text> over: insert(user.text)
 list formatters: user.list_formatters()
 hide formatters: user.hide_formatters()
 #word <user.word>: insert(user.word)
+<user.format_text>+$: user.insert_many(format_text_list)
+<user.format_text>+ over: user.insert_many(format_text_list)
+<user.formatters> that: user.formatters_reformat_selection(user.formatters)
+word <user.word>: insert(user.word)
 format help: user.formatters_help_toggle()
 format recent: user.formatters_recent_toggle()
 format repeat <number>: 

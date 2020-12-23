@@ -1,11 +1,13 @@
 
-app: cmd.exe
-app: iTerm2
-app: Terminal
-app: Windows Command Processor
-app: ConEmu64.exe
-app: Gnome-terminal
-app: Mate-terminal
+# app: cmd.exe
+# app: iTerm2
+# app: Terminal
+# app: Windows Command Processor
+# app: ConEmu64.exe
+# app: Gnome-terminal
+# app: Mate-terminal
+tag: terminal
+and tag: user.git
 -
 tag(): user.terminal
 
@@ -16,6 +18,7 @@ git add everything: "git add -u\n"
 git bisect: "git bisect "
 git blame: "git alame "
 git branch: "git branch "
+git remote branches: "git branch --remote\n"
 git branch <user.text>: "git branch {text}"
 git checkout: "git checkout "
 git checkout master: "git checkout master\n"
@@ -29,6 +32,7 @@ git diff: "git diff "
 git diff cached: "git diff --cached\n"
 git fetch: "git fetch\n"
 git fetch <user.text>: "git fetch {text}"
+git fetch prune: "git fetch --prune\n"
 git in it: "git init\n"
 git log all: "git log\n"
 git log all changes: "git log -c\n"
@@ -53,7 +57,7 @@ git rebase continue: "git rebase --continue"
 git rebase skip: "git rebase --skip"
 git remove: "git rm "
 git (remove|delete) branch: "git branch -d "
-git (remove|delete) remote branch: "git push --delete "
+git (remove|delete) remote branch: "git push --delete origin "
 git reset: "git reset "
 git reset soft: "git reset --soft "
 git reset hard: "git reset --hard "

@@ -1,38 +1,47 @@
 tag: user.file_manager
 -
-settings():
-    # enable if you'd like the picker gui to automatically appear when explorer has focus
-    user.file_manager_auto_show_pickers = 0
-
-force title: user.file_manager_refresh_title()
-show options: user.file_manager_show_pickers()
-hide options: user.file_manager_hide_pickers()
-go pictures: user.file_manager_open_user_directory("Pictures")
-go downloads: user.file_manager_open_user_directory("Downloads")
-go profile: user.file_manager_open_user_directory("")
+title force: user.file_manager_refresh_title()
+manager show: user.file_manager_toggle_pickers()
+manager refresh: user.file_manager_update_lists()
+go desk: user.file_manager_open_user_directory("Desktop")
 go docks: user.file_manager_open_user_directory("Documents")
+go downloads: user.file_manager_open_user_directory("Downloads")
+go pictures: user.file_manager_open_user_directory("Pictures")
+go profile: user.file_manager_open_user_directory("")
+go talon home: user.file_manager_open_directory(path.talon_home())
+go talon user: user.file_manager_open_directory(path.talon_user())
+go user: user.file_manager_open_directory(path.user_home())
 go back: user.file_manager_go_back()
 go forward: user.file_manager_go_forward()
 daddy: user.file_manager_open_parent()
-
-^follow <number>$: user.file_manager_open_directory(number - 1)
-^open <number>$: user.file_manager_open_file(number - 1)
-^(cell | sell | select) folder <number>$: user.file_manager_select_directory(number - 1)
-^(cell | sell | select) file <number>$: user.file_manager_select_file(number - 1)
+^follow <number>$: 
+    directory = user.file_manager_get_directory_by_index(number - 1)
+    user.file_manager_open_directory(directory)
+^follow {user.file_manager_directories}$: user.file_manager_open_directory(file_manager_directories)
+^open <number>$: 
+    file = user.file_manager_get_file_by_index(number - 1)
+    user.file_manager_open_file(file)
+^folder <number>$: 
+    directory = user.file_manager_get_directory_by_index(number - 1)
+    user.file_manager_select_directory(directory)
+^file <number>$: 
+    file = user.file_manager_get_file_by_index(number - 1)
+    user.file_manager_select_file(file)
+^file {user.file_manager_files}$: user.file_manager_select_file(file_manager_files)
 
 #new folder
-new folder: user.file_manager_new_folder()
+folder new <user.text>: 
+    user.file_manager_new_folder(text)
 
 #show properties
-show properties: user.file_manager_show_properties()
+properties show: user.file_manager_show_properties()
 
 # open terminal at location
 terminal here: user.file_manager_terminal_here()
 
-next folders: user.file_manager_next_folder_page()
-previous folders: user.file_manager_previous_folder_page()
+folder next: user.file_manager_next_folder_page()
+folder last: user.file_manager_previous_folder_page()
 
-next files: user.file_manager_next_file_page()
-previous files: user.file_manager_previous_file_page()
-
+file next: user.file_manager_next_file_page()
+file last: user.file_manager_previous_file_page()
 
