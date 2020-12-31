@@ -26,10 +26,15 @@ talon mode: user.talon_mode()
     user.code_clear_language_mode()
     mode.disable("user.gdb")
 ^command mode$:
+    mode.enable('user.mouse')
     mode.disable("sleep")
 	mode.disable("dictation")
 	#mode.disable("bug")
-	mode.enable("command")
+    mode.enable("command")
+^mouse mode$:
+    #mode.enable('mouse')
+    mode.disable('command')
+
 ^bug mode$:
     mode.disable("sleep")
     mode.disable("dictation")
@@ -39,13 +44,14 @@ talon mode: user.talon_mode()
 # disable debug mode:
 #     mode.disable("user.gdb")
 
-# ^[enable] terminal mode$:
-#     mode.enable("user.commandline")
-# ^disable terminal mode$:
-#     mode.disable("user.commandline")
+[enable] terminal mode$:
+    mode.enable("user.commandline")
+    #insert("test")
+disable terminal mode$:
+    mode.disable("user.commandline")
     
 # ^force see sharp$: user.code_set_language_mode("csharp")
-# ^force see plus plus$: user.code_set_language_mode("cplusplus")
+# ^force see plus plus$:code_set_language_mode("cplusplus")
 # ^force haskell$: user.code_set_language_mode("haskell")
 # ^force go (lang|language)$: user.code_set_language_mode("go")
 # ^force java: user.code_set_language_mode("java")

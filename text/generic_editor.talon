@@ -208,3 +208,5 @@ cut word right:
 cut line:
     edit.select_line()
     edit.cut()
+push:
+    edit.line_end()

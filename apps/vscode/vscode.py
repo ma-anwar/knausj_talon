@@ -10,6 +10,7 @@ mod.apps.vscode = "app.name: Visual Studio Code"
 mod.apps.vscode = "app.name: Code"
 mod.apps.vscode = "app.name: Code - OSS"
 
+
 ctx.matches = r"""
 app: vscode
 """
@@ -20,8 +21,8 @@ class win_actions:
     def filename():
         title = actions.win.title()
         # this doesn't seem to be necessary on VSCode for Mac
-        # if title == "":
-        #    title = ui.active_window().doc
+        if title == "":
+           title = ui.active_window().doc
 
         if is_mac:
             result = title.split(" — ")[0]

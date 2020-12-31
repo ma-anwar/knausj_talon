@@ -226,8 +226,8 @@ def show_cursor_helper(show):
 
 def on_pop(active):
     global reading_mode
-    print(f"Reading motor is {reading_mode}")
-    print('we got here')
+    #print(f"Reading motor is {reading_mode}")
+    #print('we got here')
     if (reading_mode):
         actions.key("pagedown")
         return
@@ -242,13 +242,21 @@ def on_pop(active):
     elif(not eye_zoom_mouse.zoom_mouse.enabled):
             if setting_mouse_enable_pop_click.get() >= 1:
                 ctrl.mouse_click(button=0, hold=16000)
-#def on_hiss(active):
-    #actions.insert("jjjjj")
+def on_hiss(active):
+    if (not active):
+        return
+    print("Detected")
+    global reading_mode
+    if (reading_mode):
+        actions.key("pageup")
+        return 
+    else:
+        actions.mouse_click(1)
 
 
 
 noise.register("pop", on_pop)
-#noise.register("hiss", on_hiss)
+noise.register("hiss", on_hiss)
 
 
 

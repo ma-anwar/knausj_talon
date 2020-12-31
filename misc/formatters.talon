@@ -1,5 +1,5 @@
 #provide both anchored and unachored commands via 'over'
-(say | speak | phrase) <user.text>$: 
+(say | speak | phrase) <user.text>: 
   result = user.formatted_text(text, "NOOP")
   insert(result)
 (say | speak | phrase) <user.text> over: 
@@ -7,17 +7,20 @@
   insert(result)
 #<user.format_text>$: insert(format_text)
 #Consider modifying these in light of the new formatters
-<user.format_text> <user.symbol>$:
-  insert(format_text)
-  insert(symbol)
+<user.format_text> <user.symbol_key>$:
+  user.insert_many(format_text_list)
+  #insert(format_text)
+  insert(symbol_key)
 #<user.format_text> over: insert(format_text)
-phrase <user.text>$: insert(user.text)
-phrase <user.text> <user.symbol>$: 
-  insert(user.text)
-  insert(symbol)
-phrase <user.text> over: insert(user.text)
-(say | speak) <user.spaceText>$: insert(user.spaceText)
-(say | speak) <user.spaceText> over: insert(user.spaceText)
+#phrase <user.format_text>$: insert(user.format_text)
+phrase <user.text> <user.symbol_key>$: 
+  result = user.formatted_text(text, "NOOP")
+  insert(result)
+  #insert(user.text)
+  insert(symbol_key)
+#phrase <user.text> over: insert(user.text)
+#(say | speak) <user.spaceText>$: insert(user.spaceText)
+#(say | speak) <user.spaceText> over: insert(user.spaceText)
 list formatters: user.list_formatters()
 hide formatters: user.hide_formatters()
 #word <user.word>: insert(user.word)

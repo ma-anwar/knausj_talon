@@ -2,8 +2,9 @@
 # see shell.talon for shell-specific keybindings
 os: linux
 mode: user.commandline
-mode: command
-and tag: terminal
+#or mode: command
+#tag: user.terminal
+#or tag: user.powerEditor
 -
 lisa: "ls\n"
 lisa long: "ls -al\n"

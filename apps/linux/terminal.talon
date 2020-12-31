@@ -3,6 +3,7 @@ app: Gnome-terminal
 app: Mate-terminal
 -
 tag(): user.terminal
+tag(): user.git
 tag(): user.gdb
 tag(): user.file_manager
 #todo: generic tab commands

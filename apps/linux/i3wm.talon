@@ -28,6 +28,18 @@ launch licks:
     sleep(100ms)
     insert('lyx')
     key(enter)
+launch files:
+    key(super-d)
+    sleep(100ms)
+    insert("caja")
+    key(enter)
+#screenshot area of screen
+launch screenshot:
+    key(super-d)
+    sleep(100ms)
+    insert("mate-screenshot -a")
+    key(enter)
+
 reload i three config: key(super-shift-c)
 restart i three: key(super-shift-r)
 

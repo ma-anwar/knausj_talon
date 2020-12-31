@@ -1,4 +1,7 @@
+mode: mouse
+-
 control mouse: user.mouse_toggle_control_mouse()
+    actions.insert("jjjjj")
 zoom mouse: user.mouse_toggle_zoom_mouse()
 camera overlay: user.mouse_toggle_camera_overlay()
 run calibration: user.mouse_calibrate()	
@@ -102,3 +105,5 @@ curse yes: user.mouse_show_cursor()
 curse no: user.mouse_hide_cursor()
 drag: user.mouse_drag()
 copy mouse position: user.copy_mouse_position()
+enable reading mode: user.enable_reading_mode()
+disable reading mode: user.disable_reading_mode()

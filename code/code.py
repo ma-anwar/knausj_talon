@@ -15,6 +15,7 @@ setting_private_variable_formatter = mod.setting("code_private_variable_formatte
 setting_protected_variable_formatter = mod.setting(
     "code_protected_variable_formatter", str
 )
+
 setting_public_variable_formatter = mod.setting("code_public_variable_formatter", str)
 
 mod.tag("code_comment", desc="Tag for enabling generic comment commands")
@@ -59,12 +60,9 @@ extension_lang_map = {
     "kt": "kotlin",
     "hs": "haskell",
     "snippets": "snippets",
-<<<<<<< HEAD
     "vim": "vim",
     "js": "javascript",
-=======
     "talon": "talon",
->>>>>>> upstream/master
     "ts": "typescript",
     "vba": "vba",
     "vim": "vimscript",

@@ -7,13 +7,14 @@ tag(): user.multiple_cursors
 tag(): user.snippets
 tag(): user.splits
 tag(): user.tabs
+tag(): user.powerEditor
 #talon app actions
 action(app.tab_close): user.vscode("workbench.action.closeActiveEditor")
 action(app.tab_next): user.vscode("workbench.action.nextEditorInGroup")
 action(app.tab_previous): user.vscode("workbench.action.previousEditorInGroup")
 action(app.tab_reopen): user.vscode("workbench.action.reopenClosedEditor")
 action(app.window_close): user.vscode("workbench.action.closeWindow")
-action(app.window_open): user.vscode("workbench.action.newWindow")
+action(app.window_open): user.vscode("workbench.action.newWindow")  
 
 #talon code actions
 action(code.toggle_comment): user.vscode("editor.action.commentLine")
@@ -68,7 +69,7 @@ panel control: user.vscode("workbench.panel.repl.view.focus")
 panel output: user.vscode("workbench.panel.output.focus")
 panel problems: user.vscode("workbench.panel.markers.view.focus")
 panel switch: user.vscode("workbench.action.togglePanel")
-panel terminal: user.vscode("workbench.panel.terminal.focus")
+panel terminal: user.vscode("workbench.action.terminal.toggleTerminal")
 
 # Settings
 show settings: user.vscode("workbench.action.openGlobalSettings")

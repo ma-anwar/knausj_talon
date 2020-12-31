@@ -5,8 +5,8 @@
 # app: Windows Command Processor
 # app: ConEmu64.exe
 # app: Gnome-terminal
-# app: Mate-terminal
-tag: terminal
+#app: Mate-terminal
+tag: user.terminal
 and tag: user.git
 -
 tag(): user.terminal

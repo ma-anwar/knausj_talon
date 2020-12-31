@@ -73,3 +73,11 @@ action(browser.submit_form):
 
 action(browser.toggle_dev_tools):
 	key(ctrl-shift-i)
+dev console:
+	key(ctrl-shift-J)
+dev network:
+	key(ctrl-shift-E)
+dev tool right:
+	key(ctrl-])
+dev tool left:
+	key(ctrl-[)

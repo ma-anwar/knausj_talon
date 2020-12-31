@@ -92,3 +92,6 @@ state none: "None "
 
 push:
     edit.line_end()
+system print:
+    insert("System.out.println()")
+    edit.left()
