@@ -7,17 +7,17 @@
 #   insert(result)
 #<user.format_text>$: insert(format_text)
 #Consider modifying these in light of the new formatters
-# <user.format_text> <user.symbol_key>$:
-#   user.insert_many(format_text_list)
+<user.format_text> <user.symbol_key>$:
+  user.insert_many(format_text_list)
 #   #insert(format_text)
-  # insert(symbol_key)
+  insert(symbol_key)
 #<user.format_text> over: insert(format_text)
 # #phrase <user.format_text>$: insert(user.format_text)
-# phrase <user.text> <user.symbol_key>$: 
-#   result = user.formatted_text(text, "NOOP")
-#   insert(result)
+phrase <user.text> <user.symbol_key>$: 
+  result = user.formatted_text(text, "NOOP")
+  insert(result)
 #   #insert(user.text)
-#   insert(symbol_key)
+  insert(symbol_key)
 #phrase <user.text> over: insert(user.text)
 #(say | speak) <user.spaceText>$: insert(user.spaceText)
 #(say | speak) <user.spaceText> over: insert(user.spaceText)
