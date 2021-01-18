@@ -1,4 +1,4 @@
-mode: mouse
+# mode: mouse
 -
 control mouse: user.mouse_toggle_control_mouse()
     actions.insert("jjjjj")

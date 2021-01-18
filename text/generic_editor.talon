@@ -210,3 +210,5 @@ cut line:
     edit.cut()
 push:
     edit.line_end()
+delete:
+    key(backspace)

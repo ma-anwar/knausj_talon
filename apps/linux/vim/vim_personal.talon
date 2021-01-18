@@ -1,4 +1,4 @@
-tag: user.vim
+app: vim
 -
 
 ###
@@ -19,13 +19,28 @@ open python snippets:
     user.vim_command_mode_exterm(":e ~/.vim/plugged/vim-snippets/UltiSnips/python.snippets\n")
 open bash snippets:
     user.vim_command_mode_exterm(":e ~/.vim/plugged/vim-snippets/UltiSnips/sh.snippets\n")
-open vim config:
+open talon plugins:
+    user.vim_command_mode_exterm(":e ~/source/talon/releases/latest/resources/talon_plugins\n")
+open talon python:
+    user.vim_command_mode_exterm(":e ~/source/talon/releases/latest/resources/python/lib/python3.7/site-packages/talon\n")
+open config:
     user.vim_command_mode_exterm(":e ~/.vimrc\n")
+open eye three:
+    user.vim_command_mode_exterm(":e ~/.i3/config\n")
+
+###
+# Admin
+###
+dav mail session:
+    user.vim_command_mode_exterm(":source ~/.vim/sessions/davmail.session")
+scratch session:
+    user.vim_command_mode_exterm(":source ~/.vim/sessions/scratch.session")
+
 ###
 #
 ###
 fine merge conflict:
-    user.vim_command_mode_exterm(":/\c<<<\n")
+    user.vim_command_mode_exterm(":/\\c<<<\n")
 
 dick to class member:
     user.vim_normal_mode("ds[ds\"i.")
@@ -83,5 +98,5 @@ convert string to stack:
     user.vim_command_mode(":call String_to_stack_buffer()")
     edit.left()
 
-#start server:
-#    insert(":echo serverstart()\n")
+stellaris session:
+    user.vim_command_mode_exterm(":source ~/.vim/sessions/stellaris.session")

@@ -57,21 +57,26 @@ action(user.code_null): "NULL"
 action(user.code_is_null): " == NULL "
 action(user.code_is_not_null): " != NULL"
 action(user.code_state_if):
-    insert("if () {\n}\n")
-    key(up:2 left:3)
+    insert("if () { \n")
+    # insert("if () {\n}\n")
+    key(up:1 right:2)
 action(user.code_state_else_if):
-    insert("else if () {\n}\n")
-    key(up:2 left:3)
+    # insert("else if () {\n}\n")
+    insert("else if () {")
+    insert("\n")
+    sleep(1)
+    key(up:1 right:7)
 action(user.code_state_else):
-    insert("else\n{\n}\n")
-    key(up:2)
+    insert("else{\n")
+    key(up:1)
 action(user.code_state_switch):
     insert("switch ()")
     edit.left()
 action(user.code_state_case):
     insert("case \nbreak;")
     edit.up()
-action(user.code_state_for): "for "
+action(user.code_state_for): 
+    insert("for(")
 action(user.code_state_go_to): "goto "
 action(user.code_state_while):
     insert("while ()")
@@ -126,7 +131,7 @@ state default: "default:\nbreak;"
 #best used with a push like command
 #the below example may not work in editors that automatically add the closing bracket
 #if so uncomment the two lines and comment out the rest accordingly
-push brackets:
+push block:
     edit.line_end()
     #insert("{")
     #key(enter)
@@ -160,3 +165,10 @@ toggle includes: user.code_toggle_libraries()
 include <user.code_libraries>:
     user.code_insert_library(code_libraries, "")
     key(end enter)
+finish:
+    edit.line_end()
+    insert(";")
+    key(enter)
+# only for c, do not want to pollute one word name space
+semi:
+    insert("; ")

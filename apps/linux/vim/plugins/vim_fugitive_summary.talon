@@ -5,7 +5,7 @@
 # XXX - need to make sure not to conflict with vim bindings
 # XXX - missing a significant amount of commands
 
-tag: user.vim
+tag: user.vim_fugitive_summary
 and win.title: /\[Git/
 -
 
@@ -15,8 +15,8 @@ stage [file]: key(s)
 unstage [file]: key(u)
 unstage (all|everything): key(U)
 discard change: key(key)
-(in line|toggle) diff: key(=)
-exclude this file: "gI"
+[(in line|toggle)] diff: key(=)
+exclude [this file]: "gI"
 
 # Diff maps
 
@@ -28,8 +28,8 @@ preview file: key(p)
 
 # Commit maps
 
-commit changes: "cc"
-amend last commit: "ca"
+commit [changes]: "cc"
+amend [last commit]: "ca"
 
 # Checkout/branch maps
 
@@ -40,6 +40,6 @@ amend last commit: "ca"
 # Miscellaneous maps
 
 close status: "gq"
-fugitive help: "g?"
+help: "g?"
 
 # Global maps

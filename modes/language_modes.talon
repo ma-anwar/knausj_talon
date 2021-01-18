@@ -13,3 +13,4 @@
 disable debug mode:
     mode.disable("user.gdb")
     
+^force see$: user.code_set_language_mode('c')

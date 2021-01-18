@@ -23,21 +23,26 @@ launch <user.text>:
         key(super-d)
         sleep(100ms)
         insert("{text}")
-launch licks:
-    key(super-d)
-    sleep(100ms)
-    insert('lyx')
-    key(enter)
-launch files:
-    key(super-d)
-    sleep(100ms)
-    insert("caja")
-    key(enter)
+# launch licks:
+#     key(super-d)
+#     sleep(100ms)
+#     insert('lyx')
+#     key(enter)
+# launch files:
+#     key(super-d)
+#     sleep(100ms)
+#     insert("caja")
+#     key(enter)
 #screenshot area of screen
-launch screenshot:
+# launch screenshot:
+#     key(super-d)
+#     sleep(100ms)
+#     insert("mate-screenshot -a")
+#     key(enter)
+launch <user.i3applications>:
     key(super-d)
-    sleep(100ms)
-    insert("mate-screenshot -a")
+    sleep(50ms)
+    insert(i3applications)
     key(enter)
 
 reload i three config: key(super-shift-c)

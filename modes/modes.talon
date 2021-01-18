@@ -26,7 +26,7 @@ talon mode: user.talon_mode()
     user.code_clear_language_mode()
     mode.disable("user.gdb")
 ^command mode$:
-    mode.enable('user.mouse')
+    # mode.enable('user.mouse')
     mode.disable("sleep")
 	mode.disable("dictation")
 	#mode.disable("bug")

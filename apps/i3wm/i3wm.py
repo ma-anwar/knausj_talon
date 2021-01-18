@@ -15,7 +15,26 @@ mod.setting(
     default="super",
     desc="The default key to use for i3wm commands",
 )
+ctx = Context()
+ctx.matches = r"""
+mode:command
+"""
 
+ctx.lists['self.i3applications'] = {
+    'firefox':'firefox', 
+    'code':'code', 
+    'telegram': 'telegram', 
+    'licks':'lyx',
+    'files':'caja', 
+    'screenshot':"mate-screenshot -a",
+}
+
+mod.list("i3applications", desc="applications")
+
+@mod.capture(rule="{self.i3applications}")
+def i3applications(m) -> str:
+    "Returns a string"
+    return m.i3applications
 
 @mod.action_class
 class Actions:

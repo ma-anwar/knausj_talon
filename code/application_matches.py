@@ -82,3 +82,10 @@ mod.apps.windows_power_shell = """
 os: windows
 and app.name: powershell.exe
 """
+
+apps.vim = """
+win.title:/VIM/
+"""
+apps.logisim = """
+app.name: com-cburch-logisim-Main
+"""

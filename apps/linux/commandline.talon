@@ -203,23 +203,31 @@ run reader:
     edit.left()
     edit.left()
     edit.left()
+run logic:
+    insert("cd /opt/logisim-evolution/bin")
+    key(enter)
+    insert("nohup ./logisim-evolution &")
+    key(enter)
 
 #export <user.text>:
 
 #
 errors to standard out: "2>&1 "
-java compile assignment:
-    insert('javac -d bin src/a0/Cfiltering.java src/driver/CfilteringDriver.java')
 java compile to binary:
     insert('javac -d bin ')
-java run assignment:
-    insert('java -cp bin/ driver.CfilteringDriver ')
 java run binary:
     insert('java -cp bin/ ')
 java compile: "javac "
 java run: "java "
 java format:
     insert("java -jar ~/Documents/tools/google-java-format-1.9-all-deps.jar -r ")
-
+option <user.letters>:
+    insert(" -{letters} ")
+option long:
+    insert("--")
+system suspend:
+    insert("sudo pm-suspend")
+system restart:
+    insert("sudo reboot")
 
 

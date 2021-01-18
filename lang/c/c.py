@@ -99,6 +99,7 @@ ctx.lists["user.code_functions"] = {
     "stir copy": "strcpy",
     "stir en copy": "strncpy",
     "stir elle copy": "strlcpy",
+    "stir to long": "strtol",
     "string char": "strchr",
     "string dupe": "strdup",
     "stir dupe": "strdup",
@@ -140,6 +141,11 @@ mod.list("stdint_types", desc="Common stdint C types")
 mod.list("stdint_signed", desc="Common stdint C datatype signed modifiers")
 
 
+@mod.capture
+def c_cast(m) -> str:
+    "Returns a string"
+
+
 @mod.capture(rule="{self.c_pointers}")
 def c_pointers(m) -> str:
     "Returns a string"
@@ -150,12 +156,6 @@ def c_pointers(m) -> str:
 def c_signed(m) -> str:
     "Returns a string"
     return m.c_signed
-
-
-@mod.capture(rule="{self.c_types}")
-def c_types(m) -> str:
-    "Returns a string"
-    return m.c_types
 
 
 @mod.capture(rule="{self.c_types}")
@@ -232,5 +232,4 @@ class user_actions:
         actions.user.code_insert_function(result, None)
 
     def code_insert_library(text: str, selection: str):
-        actions.user.paste("include <{}>".format(selection))
-
+        actions.user.paste("#include <{}>".format(text))

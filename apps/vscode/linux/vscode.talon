@@ -5,6 +5,8 @@ os: linux
 app: Code
 app: Code - OSS
 -
+tag(): user.terminal
+
 
 action(user.ide_refactor):
   key(ctrl-a)

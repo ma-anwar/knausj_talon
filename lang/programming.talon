@@ -9,7 +9,7 @@ is (none|null): user.code_is_null()
 #todo: types?
 #word (dickt | dictionary): user.code_type_dictionary()
 state if: user.code_state_if()
-state else if: user.code_state_else_if()
+state otherwise : user.code_state_else_if()
 state else: user.code_state_else()
 state self: user.code_self()
 #todo: this is valid for many languages,
@@ -39,11 +39,11 @@ state next: user.code_next()
 state true: user.code_true()
 state false: user.code_false()
 
-push <user.symbol>:
+push <user.symbol_key>:
     edit.line_end()
     insert("{symbol}")
     key(enter)
-append <user.symbol>:
+append <user.symbol_key>:
     edit.line_end()
     insert('{symbol}')
 kick:  ", "

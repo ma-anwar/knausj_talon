@@ -154,6 +154,7 @@ state reduce:
   key(left)
 
 state spread: "..."
+state temp: "${"
 
 ^funky <user.text>$: user.code_private_function(text)
 ^pro funky <user.text>$: user.code_protected_function(text)

@@ -31,3 +31,4 @@ action(user.file_manager_open_parent):
     user.file_manager_refresh_title()
 
 action(edit.delete_line): key(esc)
+

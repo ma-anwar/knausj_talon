@@ -1,6 +1,9 @@
 #custom vscode commands go here
 app: vscode
 -
+settings():
+    key_wait = 1
+    insert_wait = 1.5
 tag(): user.find_and_replace
 tag(): user.line_commands
 tag(): user.multiple_cursors
@@ -196,5 +199,7 @@ copy line up: user.vscode("editor.action.copyLinesUpAction")
 #Expand/Shrink AST Selection
 select less: user.vscode("editor.action.smartSelect.shrink")
 select (more|this): user.vscode("editor.action.smartSelect.expand")
+quick fix:
+  key(ctrl-.)
   
   

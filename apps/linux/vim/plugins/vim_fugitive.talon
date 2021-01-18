@@ -1,4 +1,5 @@
-tag: user.vim
+tag: user.vim_fugitive
+and not tag: user.vim_terminal
 -
 
 (fugitive|git) add (current|this) file: user.vim_command_mode(":G add %\n")
@@ -29,3 +30,5 @@ tag: user.vim
 # merge conflict resolution
 keep (target|left): user.vim_command_mode(":diffget //2\n")
 keep (merge|right): user.vim_command_mode(":diffget //3\n")
+next hunk: user.vim_normal_mode_keys("] c")
+last hunk: user.vim_normal_mode_keys("[ c")

@@ -1,15 +1,23 @@
 win.title: /VIM MODE:t/
 -
 
-tag(): user.terminal
+tag(): terminal
+tag(): user.vim_terminal
 
-(pop terminal|vim mode):
+
+action(edit.delete_line):
+    key(ctrl-u)
+
+pop (terminal|term):
     key(ctrl-\ ctrl-n)
 
 # pop terminal mode and scroll up once, from this point onward you can scroll
 # like normal
 # XXX - scroll up just become contextual on mode
-rabbit up:
+# rabbit up:
+action(edit.page_up):
+    key(ctrl-\ ctrl-n ctrl-b)
+scroll up:
     key(ctrl-\ ctrl-n ctrl-b)
 
 # this causes exclusive terminal windows to exit without requiring key press or
@@ -82,3 +90,11 @@ echo <number_small> <user.ordinals>:
     user.vim_set_insert_mode()
     edit.paste()
     key(space)
+
+# yankee are commands are for copying the entire line from a given point
+yankee <number_small>:
+    user.vim_normal_mode_exterm("{number_small}k")
+    key('0')
+    insert("y$")
+    insert(":set nohls\n")
+    user.vim_set_insert_mode()

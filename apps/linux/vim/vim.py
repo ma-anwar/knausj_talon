@@ -1,12 +1,11 @@
 # see doc/vim.md
-# XXX - define all the lists separately and then update ctx.lists only once
-# XXX - document that visual selection mode implies terminal escape
-# XXX - eventually use nvim RPC to confirm mode changes vs relying on a time
-#       delay that is buggy depending on your cpu consumption
-# XXX - add setting for disabling local terminal escape when running inside
-#       remote vim sessions via ssh, etc
-# XXX - import and test scenario where the mode isn't listed at all
-# XXX - add test cases
+# TODO:
+# - define all the lists separately and then update ctx.lists only once
+# - document that visual selection mode implies terminal escape
+# - add setting for disabling local terminal escape when running inside
+#   remote vim sessions via ssh, etc
+# - import and test scenario where the mode isn't listed at all
+# - add test cases
 
 import time
 
@@ -23,8 +22,52 @@ mod = Module()
 ctx = Context()
 
 ctx.matches = r"""
-win.title:/VIM/
+app: vim
 """
+
+# talon vim plugins. see apps/vim/plugins/
+# to enable plugins you'll want to set these inside vim.talon
+plugin_tag_list = [
+    "vim_ale",
+    "vim_change_inside_surroundings",
+    "vim_cscope",
+    "vim_easy_align",
+    "vim_easymotion",
+    "vim_fern",
+    "vim_fern_mapping_fzf",
+    "vim_floaterm",
+    "vim_fugitive",
+    "vim_fugitive_summary",
+    "vim_fzf",
+    "vim_markdown_toc",
+    "vim_nerdtree",
+    "vim_obsession",
+    "vim_plug",
+    "vim_signature",
+    "vim_surround",
+    "vim_taboo",
+    "vim_tabular",
+    "vim_taskwiki",
+    "vim_test",
+    "vim_unicode",
+    "vim_ultisnips",
+    "vim_wiki",
+    "vim_you_are_here",
+    "vim_youcompleteme",
+    "vim_zoom",
+]
+for entry in plugin_tag_list:
+    mod.tag(entry, f"tag to load {entry} vim plugin commands")
+
+mode_tag_list = [
+    "vim_terminal_mode",
+    "vim_command_mode",
+    "vim_visual_mode",
+    "vim_normal_mode",
+    "vim_insert_mode",
+]
+for entry in mode_tag_list:
+    mod.tag(entry, f"tag to load {entry} specific commands")
 
 
 # Based on you using a custom title string like this:
@@ -65,16 +108,15 @@ standard_counted_actions = {
     "append line": "A",
     "insert": "i",
     "insert column zero": "gI",
-    # "open": "o",  # conflicts too much with other commands
-    "open below": "o",
-    "open above": "O",
+    # "open below": "o",
+    # "open above": "O",
     # opposite is useful for visual mode cursor swapping
     "opposite": "o",
     "substitute": "s",
     "substitute line": "S",
     "undo": "u",
     "undo line": "U",
-    "erase": "x",
+    # "erase": "x",
     "erase reversed": "X",
     #    "erase back": "X",
     #    "put": "p",
@@ -101,7 +143,8 @@ standard_counted_actions = {
     "upper case line": "gUU",
     "lower case line": "guu",
     # XXX - these work from visual mode and normal mode
-    "insert before": "I",
+    # "insert before": "I",
+    "prefix": "I",
     # "insert line": "I",
     "play again": "@@",
     "toggle case": "~",
@@ -116,14 +159,18 @@ standard_counted_actions = {
 # Standard self.vim_counted_actions key() entries
 standard_counted_actions_control_keys = {
     "redo": "ctrl-r",
-    "scroll down": "ctrl-f",
-    "scroll up": "ctrl-b",
-    "page down": "ctrl-f",
-    "page up": "ctrl-b",
-    "half page down": "ctrl-d",
-    "half scroll down": "ctrl-d",
-    "half page up": "ctrl-u",
-    "half scroll up": "ctrl-u",
+    # "scroll down": "ctrl-f",
+    "pink": "ctrl-f",
+    # "scroll up": "ctrl-b",
+    "punk": "ctrl-b",
+    # "page down": "ctrl-f",
+    # "page up": "ctrl-b",
+    # "half page down": "ctrl-d",
+    # "half page up": "ctrl-u",
+    # "half scroll down": "ctrl-d",
+    # "half scroll up": "ctrl-u",
+    "half pink": "ctrl-d",
+    "half punk": "ctrl-u",
     "increment": "ctrl-a",
     "decrement": "ctrl-x",
 }
@@ -133,10 +180,12 @@ standard_counted_actions_control_keys = {
 # alias commands from standard_counted_actions above, without replacing them
 # there to prevent merge conflicts.
 custom_counted_action = {
-    "panic": "u",
+    # "panic": "u",
     "dine": "dd",
     "drop": "x",
     "yine": "Y",
+    "ochre": "o",
+    "orca": "O",
     "slide left": "<<",
     "slide right": ">>",
 }
@@ -187,9 +236,9 @@ commands_with_motion = {
     "swap case": "~",
     # motions
     "change": "c",
-    # "delete": "d
-    "trim": "d",  # XXX - likely replace with clear
-    #"clear": "d",  # this is to be consistent with talon generic_editor.talon
+    # "delete": "d",
+    # "trim": "d",  # XXX - likely replace with clear
+    "clear": "d",  # this is to be consistent with talon generic_editor.talon
     "indent": ">",
     "unindent": "<",
     "yank": "y",  # NOTE: conflicts with talon 'yank' alphabet for 'y' key
@@ -211,8 +260,8 @@ visual_commands = {
     "change": "c",
     "join": "J",
     # "delete": "d",
-    "trim": "d",  # XXX - likely replace with clear
-    #"clear": "d",  # this is to be consistent with talon generic_editor.talon
+    # "trim": "d",  # XXX - likely replace with clear
+    "clear": "d",  # this is to be consistent with talon generic_editor.talon
     "yank": "y",  # NOTE: conflicts with talon 'yank' alphabet for 'y' key
     # "copy": "y",
     "format": "gq",
@@ -237,7 +286,7 @@ ctx.lists["self.vim_motion_commands"] = list(
 # ones that are already enabled
 vim_motions = {
     "back": "b",
-    "back word": "b",
+    # "back word": "b",
     "big back": "B",
     # "big back word": "B",
     # NOTE - this conflicts with default talon 'end' key pressing
@@ -255,7 +304,7 @@ vim_motions = {
     "down": "j",
     "up": "k",
     "next": "n",
-    "next reversed": "N",
+    # "next reversed": "N",
     "previous": "N",
     "column zero": "0",
     "column": "|",
@@ -263,22 +312,28 @@ vim_motions = {
     "bend": "^",
     "end of line": "$",
     "lend": "$",
-    "cursor search": "*",
+    # "cursor search": "*",
     "curse search": "*",
     # "cursor search reversed": "#",
     "curse search reversed": "#",
     # These conflict with general 'search' command
     # "search under cursor": "*",
     # "search under cursor reversed": "#",
+    # TODO - make easier to remember/say
     "again": ";",
     "again reversed": ",",
-    "down sentence": ")",
-    # "sentence": ")",
-    "up sentence": "(",
-    "down paragraph": "}",
-    # "paragraph": "}",
+    # TODO - sentence conflicts with talon
+    # "down sentence": ")",
+    "tense": ")",
+    "up tense": "(",
+    # "down paragraph": "}",
+    "paragraph": "}",
+    "graph": "}",
     "up paragraph": "{",
+    "up graph": "{",
     # "start of next section": "]]",
+    # XXX - section, and last section
+    # TODO - switch previous to last
     "next section": "]]",
     # "start of previous section": "[[",
     "previous section": "[[",
@@ -289,6 +344,7 @@ vim_motions = {
     # XXX - not sure about naming - don't seem to work yet
     "block end": "]}",
     "block start": "[{",
+    # XXX - last block
     "previous block": "[}",
     "matching": "%",
     "down line": "+",
@@ -305,11 +361,13 @@ vim_motions = {
     # "cursor bottom": "L",
     "curse bottom": "L",
     # "start of document": "gg",
-    "start of file": "gg",
+    # "start of file": "gg",
+    "loft": "gg",
     # "top of document": "gg",
     # "top of file": "gg",
     # "end of document": "G",
-    "end of file": "G",
+    # "end of file": "G",
+    "gut": "G",
 }
 
 vim_motions_custom = {
@@ -325,7 +383,7 @@ ctx.lists["self.vim_motions"] = {
 }
 
 
-# XXX - make easier to say
+# TODO - Not sure if curse always applies
 ctx.lists["self.vim_motions_keys"] = {
     "last curse": "ctrl-o",
     "forward curse": "ctrl-i",
@@ -335,12 +393,18 @@ ctx.lists["self.vim_motions_keys"] = {
 
 # all of these motions take a character argument
 vim_motions_with_character = {
-    "jump to mark": "'",
+    # "jump to mark": "'",
+    # TODO - clear 'go mark' <mark> is awkward. may want til as well, or just
+    # no go... But double check with Marks in vim.linux.talon
+    "go mark": "'",
     "find": "f",
-    "find reversed": "F",
+    "fever": "F",
+    # "find reversed": "F",
     # "find previous": "F",
     "till": "t",
-    "till reversed": "T",
+    "tier": "T",
+    "last": "T",
+    # "till reversed": "T",
     # "till previous": "T",
 }
 
@@ -485,6 +549,7 @@ vim_on_and_off_settings = {
 }
 
 mod.tag("vim", desc="a tag to load various vim plugins")
+mod.tag("vim_terminal", desc="a tag to designate if we are in a vim terminal")
 mod.setting(
     "vim_preserve_insert_mode",
     type=int,
@@ -578,7 +643,6 @@ mod.list("vim_jump_targets", desc="VIM jump targets")
 mod.list("vim_normal_counted_motion_command", desc="Counted normal VIM commands")
 mod.list("vim_counted_motion_command_with_ordinals", desc="Counted normal VIM commands")
 mod.list("vim_select_motion", desc="VIM visual mode selection motions")
-mod.list("vim_any", desc="All vim commands")
 
 # Plugin-specific lists
 mod.list("vim_surround_targets", desc="VIM surround plugin targets")
@@ -694,11 +758,6 @@ def vim_motions_all_adjust(m) -> str:
 
 
 @mod.capture
-def vim_any(m) -> str:
-    "Any one key"
-
-
-@mod.capture
 def vim_text_objects(m) -> str:
     "Returns a string"
 
@@ -745,7 +804,7 @@ def vim_motions(m) -> str:
     return m.vim_motions
 
 
-@ctx.capture(rule="{self.vim_motions_keys}")
+@ctx.capture("user.vim_motions_keys", rule="{self.vim_motions_keys}")
 def vim_motions_keys(m) -> str:
     return m.vim_motions_keys
 
@@ -758,7 +817,7 @@ def vim_motions_with_upper_character(m) -> str:
 
 
 @ctx.capture(
-    rule="{self.vim_motions_with_character} (<user.letter>|<digits>|<user.symbol>)"
+    rule="{self.vim_motions_with_character} (<user.letter>|<digits>|<user.symbol_key>)"
 )
 def vim_motions_with_character(m) -> str:
     return m.vim_motions_with_character + "".join(str(x) for x in list(m)[1:])
@@ -1036,9 +1095,19 @@ class Actions:
         """press a given list of keys in normal mode"""
         v = VimMode()
         v.set_normal_mode()
-        for key in keys:
+        for key in keys.split(" "):
             # print(key)
             actions.key(key)
+
+    def vim_normal_mode_exterm_keys(keys: str, term_return: str = "False"):
+        """press a given list of keys in normal mode"""
+        v = VimMode()
+        v.set_normal_mode_exterm()
+        for key in keys.split(" "):
+            # print(key)
+            actions.key(key)
+        if term_return == "True":
+            v.set_insert_mode()
 
     def vim_visual_mode(cmd: str):
         """run a given list of commands in visual mode"""
@@ -1115,8 +1184,6 @@ class NeoVimRPC:
         title = ui.active_window().title
         if "RPC" in title:
             named_pipe = title.split("RPC:")[1].split(" ")[0]
-            print("we got here")
-            print(named_pipe)
             return named_pipe
         return None
 
@@ -1133,6 +1200,7 @@ class VimNonRpc:
 
 
 class VimMode:
+    # TODO: make this an Enum
     # mode ids represent generic statusline mode() values. see :help mode()
     NORMAL = 1
     VISUAL = 2
@@ -1172,6 +1240,7 @@ class VimMode:
         self.current_rpc = None
         self.nvrpc = NeoVimRPC()
         self.current_mode = self.get_active_mode()
+        self.canceled_timeout = settings.get("user.vim_cancel_queued_commands_timeout")
 
     def dprint(self, s):
         if settings.get("user.vim_debug"):
@@ -1198,6 +1267,7 @@ class VimMode:
     def get_active_mode(self):
         if self.nvrpc.init_ok is True:
             mode = self.nvrpc.get_active_mode()["mode"]
+            self.dprint(mode)
             # XXX -
             self.current_mode = mode
         else:
@@ -1205,7 +1275,7 @@ class VimMode:
             mode = None
             if "MODE:" in title:
                 mode = title.split("MODE:")[1].split(" ")[0]
-                # self.dprint(mode)
+                self.dprint(mode)
                 if mode not in self.vim_modes.keys():
                     return None
                 self.current_mode = mode
@@ -1283,7 +1353,7 @@ class VimMode:
         cur = self.current_mode_id()
         if type(valid_mode_ids) != list:
             valid_mode_ids = [valid_mode_ids]
-        # self.dprint(f"from {cur} to {valid_mode_ids}")
+        self.dprint(f"from {cur} to {valid_mode_ids}")
         if cur not in valid_mode_ids:
             # Just favor the first mode match
             self.set_mode(
@@ -1291,6 +1361,8 @@ class VimMode:
                 no_preserve=no_preserve,
                 escape_terminal=escape_terminal,
             )
+            # Trigger / untrigger mode-related talon grammars
+            self.set_mode_tag(valid_mode_ids[0])
 
     # Often I will say `delete line` and it will trigger `@delete` and `@nine`.
     # This then keys 9. I then say `undo` to fix the bad delete, which does 9
@@ -1314,10 +1386,23 @@ class VimMode:
         else:
             time.sleep(timeout)
 
-    # XXX - should switch this to neovim RPC when available. note however, it
-    # appears neovim api doesn't support programmatic mode switching, only
-    # querying. also querying certain modes is broken (^V mode undetected)
-    # for now we simply use keyboard binding combinations
+    @classmethod
+    # We don't want unnecessarily only call this from set_mode() is the user
+    # might change the mode of vim manually or speaking keys, but we still want
+    # the context specific grammars to match.
+    # TODO: present to figure out if this makes sense present addition to
+    # win.title matching I already do. I think it does make sense for cases of
+    # overriding certain default actions like home/end
+    def set_mode_tag(self, mode):
+        global mode_tag_list
+        global ctx
+
+        print(ctx.tags)
+
+    # NOTE: querying certain modes is broken (^V mode undetected)
+    # Setting mode with RPC is impossible, which makes sense because it would
+    # break things like macro recording/replaying. So we use keyboard
+    # combinations
     def set_mode(self, wanted_mode, no_preserve=False, escape_terminal=False):
         current_mode = self.get_active_mode()
 
@@ -1326,7 +1411,7 @@ class VimMode:
         ):
             return
 
-        # print("Setting mode to {}".format(wanted_mode))
+        self.dprint("Setting mode to {}".format(wanted_mode))
         # enter normal mode where necessary
         if self.is_terminal_mode():
             if (
@@ -1375,6 +1460,7 @@ class VimMode:
             # commands that might affect our command. For instance, accidental
             # number queueing followed by :w, etc
             actions.key("escape")
+            time.sleep(self.canceled_timeout)
             self.wait_mode_change("n")
 
         # switch to explicit mode if necessary. we will be normal mode here
