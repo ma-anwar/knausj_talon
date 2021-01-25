@@ -22,7 +22,7 @@ class win_actions:
         title = actions.win.title()
         # this doesn't seem to be necessary on VSCode for Mac
         if title == "":
-           title = ui.active_window().doc
+            title = ui.active_window().doc
 
         if is_mac:
             result = title.split(" — ")[0]
@@ -35,6 +35,7 @@ class win_actions:
         return ""
 
     def file_ext():
+        # print(actions.win.filename().split(".")[-1])
         return actions.win.filename().split(".")[-1]
 
 
@@ -224,4 +225,3 @@ class user_actions:
         actions.key("esc")
 
     # find_and_replace.py support end
-

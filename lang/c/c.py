@@ -10,7 +10,6 @@ mod.setting(
 
 ctx = Context()
 ctx.matches = r"""
-mode: user.c
 mode: command
 and code.language: c
 """
@@ -100,6 +99,7 @@ ctx.lists["user.code_functions"] = {
     "stir en copy": "strncpy",
     "stir elle copy": "strlcpy",
     "stir to long": "strtol",
+    "scan ef": "scanf",
     "string char": "strchr",
     "string dupe": "strdup",
     "stir dupe": "strdup",

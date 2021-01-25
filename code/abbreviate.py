@@ -221,4 +221,5 @@ ctx.lists["user.abbreviation"] = {
     "window": "win",
     "domain": "http://",
     "secure domain": "https://",
+    "error": "err",
 }

@@ -229,5 +229,9 @@ system suspend:
     insert("sudo pm-suspend")
 system restart:
     insert("sudo reboot")
+learn node:
+    insert("learnyounode ")
 
+learn node verify:
+    insert("learnyounode verify ")
 

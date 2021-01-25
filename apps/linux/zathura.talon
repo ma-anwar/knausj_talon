@@ -25,11 +25,13 @@ jump next:
 search:  "/"
 page neck: "J"
 page back: "K"
-zoom in: "shift-+"
-zoom out: "+"
+zoom in: "+"
+zoom out: "-"
+zoom original: "="
 mark set <number>: "m{number}"
 mark set <user.letter>: "m{user.letter}"
 mark <number>: "'{number}"
 mark <user.letter>: "'{user.letter}"
-
+night time: 
+    key(ctrl-r)
 

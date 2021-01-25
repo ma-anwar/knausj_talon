@@ -41,6 +41,9 @@ match previous <user.key>:
     key(escape F key )
 match next <user.key>:
     key(escape f key )
+delete method:
+    edit.right()
+    key(escape d F . i)
 # easy motion commands
 easy car <user.letter>:
     key(escape \ \ f letter)
@@ -59,3 +62,7 @@ easy camel:
 easy camel back:
     key(escape \ \ h)
 
+run code:
+    key(ctrl-alt-n)
+graph preview:
+    key(ctrl-k v)

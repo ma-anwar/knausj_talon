@@ -12,3 +12,5 @@ install yarn dev:
     repeat(2)
 install types:
     insert('@types/')
+yarn run dev:
+    insert('yarn run dev')
