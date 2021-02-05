@@ -98,7 +98,7 @@ file open folder: user.vscode("File: Reveal in File Explorer")
 #todo: rename isn't working.
 #file rename active: 
 #  user.vscode("File: Reveal Active File In Side Bar")
-#  user.vscode("renameFile")
+#  user      returned one.vscode("renameFile")
 #file rename: user.vscode("renameFile")
 file reveal: user.vscode("File: Reveal Active File In Side Bar") 
 

@@ -227,11 +227,24 @@ option long:
     insert("--")
 system suspend:
     insert("sudo pm-suspend")
-system restart:
+system reboot:
     insert("sudo reboot")
 learn node:
     insert("learnyounode ")
 
 learn node verify:
     insert("learnyounode verify ")
-
+run install:
+    insert("sudo apt-get install ")
+compile assignment:
+    insert("gcc -ggdb3 -Wall -std=c99 -o classifier classifier.c knn.c -lm \n")
+run assignment:
+    insert("./classifier 2 lists/mini.txt lists/mini.txt")
+grind assignment:
+    insert("valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt ./classifier 2 lists/mini.txt lists/mini.txt")
+generate tree:
+    insert("dot a1q4.gv | gvpr -c -ftree.gv | neato -n -Tpng -o binarytree.png")
+compile sixty three:
+    insert("gcc -ggdb3 -Wall testClosest.c -o testClosest")
+run grind:
+    insert("valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt ")

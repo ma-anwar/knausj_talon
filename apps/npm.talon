@@ -14,3 +14,5 @@ install types:
     insert('@types/')
 yarn run dev:
     insert('yarn run dev')
+yarn start:
+    insert("yarn start ")

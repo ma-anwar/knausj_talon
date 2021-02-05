@@ -1,5 +1,7 @@
 settings():
-    speech.debug = 1
+		speech.debug = 1
+# one: skip()
+
 #grep: "grep "
 #elle less: "ls "
 #run L S: "ls\n"

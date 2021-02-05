@@ -1,4 +1,5 @@
 # commands for common vim commands that are used in vim based editors
+# started putting vscode specific commands here
 tag: user.powerEditor
 -
 
@@ -64,5 +65,8 @@ easy camel back:
 
 run code:
     key(ctrl-alt-n)
-graph preview:
-    key(ctrl-k v)
+made break:
+    insert("<br/>")
+made arrow:
+    insert("-->")
+    
